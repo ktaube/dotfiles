@@ -1,9 +1,17 @@
 [user]
-    name = Kristaps Taube
+    name = ktaube
     email = t.kristaps@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    editor = /usr/local/bin/vim
 [push]
     default=current
 [branch]
     autosetupmerge = true
 [diff]
     algorithm = patience
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
