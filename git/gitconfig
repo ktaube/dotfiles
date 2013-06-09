@@ -1,0 +1,9 @@
+[user]
+    name = Kristaps Taube
+    email = t.kristaps@gmail.com
+[push]
+    default=current
+[branch]
+    autosetupmerge = true
+[diff]
+    algorithm = patience
