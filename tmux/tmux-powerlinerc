@@ -30,3 +30,5 @@
 	# date(1) format for the time. Americans might want to have "%I:%M %p".
 	export TMUX_POWERLINE_SEG_TIME_FORMAT="%H:%M"
 # }
+
+tmux source-file ~/.tmux.conf
