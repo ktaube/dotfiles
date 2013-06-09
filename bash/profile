@@ -21,7 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -f "$HOME/.virtualenvs" ] && [ -f "/usr/local/bin/ virtualenvwrapper.sh"]; then
+if [ -f "/usr/local/bin/virtualenvwrapper.sh"]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 fi
