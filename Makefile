@@ -2,7 +2,7 @@ isntall: install-vim install-zsh install-python install-bash \
 	 install-git install-tmux
 
 install-vim:
-	./`pwd`/vim/submodule_init
+	./vim/submodule_init
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
