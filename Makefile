@@ -2,29 +2,29 @@ isntall: install-vim install-zsh install-python install-bash \
 	 install-git install-tmux
 
 install-vim:
-	sh `pwd`/vim/submodule_init
-	rm ~/.vim ~/.vimrc
+	./`pwd`/vim/submodule_init
+	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
 
 install-python:
-	rm ~/.pythonstartup.py
+	rm -f ~/.pythonstartup.py
 	ln -s `pwd`/python/pythonstartup.py ~/.pythonstartup.py
 
 install-bash:
-	rm ~/.profile ~/.bashrc
+	rm -f ~/.profile ~/.bashrc
 	ln -s `pwd`/bash/bashrc ~/.bashrc
 	ln -s `pwd`/bash/profile ~/.profile
 
 install-git:
-	rm ~/.gitconfig
+	rm -f ~/.gitconfig
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 
 install-tmux:
 	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-	rm ~/.tmux.conf
+	rm -f ~/.tmux.conf
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
 
 install-zsh:
-	rm ~/.zshrc
+	rm -f ~/.zshrc
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
