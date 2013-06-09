@@ -1,0 +1,136 @@
+" ### Plugins. ###
+" Powerline
+let g:Powerline_symbols = 'fancy'
+" Tab compl.
+set completeopt=menuone,longest,preview
+
+" Gundo.
+map <leader>g :GundoToggle<CR>
+
+" TaskList.
+map <leader>td <Plug>TaskList
+
+" SuperTAB.
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+
+" Ctags.
+set tags=~/.mytags
+set tags=./tags;$HOME
+
+" NERDtree.
+map <F7> :NERDTreeToggle<cr>
+
+" Colorscheme
+syntax enable
+    set background=dark
+set t_Co=256
+colorscheme jellybeans
+
+" Pathogen.
+execute pathogen#infect()
+
+"" ### Settings. ###
+
+
+" Relode .vimrc.
+map <silent> <F12> :source ~/.vimrc<cr>
+
+" Jump between splits easely.
+nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
+nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
+nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Disable arrow keys
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+" Spellchecking ENG.
+if version >= 700
+   set spl=en spell
+   set nospell
+endif
+
+if exists("+spelllang")
+   set spelllang=en_us
+endif
+"
+" Paste toogle.
+set pastetoggle=<F10>
+
+" Remap column symbol to semicolin.
+nore ; :
+nore , ;
+
+" Common typo fixes.
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
+iab anf and
+iab adn and
+iab ans and
+iab teh the
+iab thre there
+
+" Indentation (Python based but should be ok for other languages too.)
+" Common settings.
+set number
+set smartcase
+set ruler
+set laststatus=2
+set incsearch
+set hlsearch
+set confirm
+set modeline
+set cul                                           " highlight current line
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set encoding=utf-8
+set autoindent
+set autowrite
+set backspace=2
+set dictionary+=/usr/share/dict/words
+set lazyredraw
+set mousemodel=popup
+set scrolloff=2
+set showcmd
+set showmatch
+set smarttab
+set visualbell
+set virtualedit=block
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=tags
+set winaltkeys=no
+filetype indent on
+filetype on  
+filetype plugin indent on
+hi CursorLine term=none cterm=none ctermbg=0      " adjust color
+set mouse=a
+map <F8> :set mouse=r<cr>
+map <F9> :set mouse=a<cr>
+set title 
+set titlestring=VIM:\ %F
+set backupdir=~/.backup,.,/tmp
+set directory=~/.backup,/tmp
+set splitbelow
+set splitright
+
+if v:version >= 600
+    set autoread
+    set foldmethod=marker
+    set printoptions=paper:letter
+    set sidescrolloff=5
+    set mouse=nvi
+endif
+
+
+" Disable Python-mode automatic code folding
+let g:pymode_folding = 0
