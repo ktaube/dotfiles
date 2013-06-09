@@ -21,20 +21,22 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+if [ -f "$HOME/.virtualenvs" ] && [ -f "/usr/local/bin/ virtualenvwrapper.sh"]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/devel/Python
-
-export SHELL="bin/zsh"
-source /usr/local/bin/virtualenvwrapper.sh
+if hash zsh 2>/dev/null; then
+    export SHELL="bin/zsh"
+fi
 
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -f "$HOME/.pythonstartup.py" ]; then
+    export PYTHONSTARTUP=$HOME/.pythonstartup.py
+fi
+
 # Restore shell after pdb
 alias sane="stty sane"
-
-export PYTHONSTARTUP=$HOME/.pythonstartup.py

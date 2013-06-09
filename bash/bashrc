@@ -116,12 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PYTHONPATH=$PYTHONPATH:/home/ktaube/Desktop/fi_autobuilder_flask
-export PYTHONPATH=$PYTHONPATH:/home/ktaube/Desktop/fi_autobuilder_flask/libs
-export PYTHONPATH=$PYTHONPATH:/home/ktaube/Desktop/libss
-
 export TERM=xterm-256color
-export SHELL="bin/zsh"
+
+if hash zsh 2>/dev/null; then
+    export SHELL="bin/zsh"
+fi
+
 source /usr/local/bin/virtualenvwrapper.sh
 
 if [[ ! $TERM =~ screen ]]; then
