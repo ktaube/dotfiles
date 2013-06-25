@@ -130,3 +130,5 @@ fi
 
 
 export PYTHONSTARTUP=$HOME/.pythonstartup.py
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
