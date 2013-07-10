@@ -1,4 +1,4 @@
-isntall: install-vim install-zsh install-python install-bash \
+install: install-vim install-zsh install-python install-bash \
 	 install-git install-tmux
 
 install-vim:
