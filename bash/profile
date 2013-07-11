@@ -40,3 +40,7 @@ fi
 
 # Restore shell after pdb
 alias sane="stty sane"
+
+if [[ -f "$HOME/.pythonstartup.py" ]]; then
+    export PYTHONSTARTUP=$HOME/.pythonstartup.py
+fi

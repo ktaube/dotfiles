@@ -127,8 +127,3 @@ source /usr/local/bin/virtualenvwrapper.sh
 if [[ ! $TERM =~ screen ]]; then
      exec tmux
 fi
-
-
-export PYTHONSTARTUP=$HOME/.pythonstartup.py
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
