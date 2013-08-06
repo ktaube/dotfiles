@@ -30,9 +30,13 @@ colorscheme jellybeans
 " Pathogen.
 execute pathogen#infect()
 
+" Pyhton Mode
+let g:pymode_lint_checker = "pyflakes"
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_jump = 1
+let g:pymode_folding = 0
+
 "" ### Settings. ###
-
-
 " Relode .vimrc.
 map <silent> <F12> :source ~/.vimrc<cr>
 
@@ -132,5 +136,3 @@ if v:version >= 600
 endif
 
 
-" Disable Python-mode automatic code folding
-let g:pymode_folding = 0
