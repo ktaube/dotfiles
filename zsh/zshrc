@@ -21,3 +21,7 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+if hash xclip 2>/dev/null; then
+    alias xclip="xclip -selection c"
+fi
