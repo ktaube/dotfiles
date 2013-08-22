@@ -24,6 +24,10 @@ if hash zsh 2>/dev/null; then
     export SHELL="bin/zsh"
 fi
 
+if hash xclip 2>/dev/null; then
+    alias xclip="xclip -selection c"
+fi
+
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
