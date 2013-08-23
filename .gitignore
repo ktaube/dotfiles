@@ -3,3 +3,5 @@
 *.bak
 vim/.netrwhist
 vim/sessions
+*.VimballRecord
+*.netrwhist
