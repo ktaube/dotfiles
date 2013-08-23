@@ -7,18 +7,9 @@
 [submodule "vim/vim/bundle/minibufexpl"]
 	path = vim/vim/bundle/minibufexpl
 	url = https://github.com/sontek/minibufexpl.vim.git
-[submodule "vim/vim/bundle/gundo"]
-	path = vim/vim/bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/vim/bundle/tasklist"]
-	path = vim/vim/bundle/tasklist
-	url = https://github.com/vim-scripts/TaskList.vim.git
 [submodule "vim/vim/bundle/nerdtree"]
 	path = vim/vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "vim/vim/bundle/solarized"]
-	path = vim/vim/bundle/solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/vim/bundle/vim-powerline"]
 	path = vim/vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
@@ -28,15 +19,6 @@
 [submodule "vim/vim/bundle/delimitMate"]
 	path = vim/vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "vim/vim/bundle/zencoding-vim"]
-	path = vim/vim/bundle/zencoding-vim
-	url = https://github.com/mattn/zencoding-vim.git
-[submodule "vim/vim/bundle/python-mode"]
-	path = vim/vim/bundle/python-mode
-	url = https://github.com/klen/python-mode.git
-[submodule "vim/vim/bundle/jinja2-syntax"]
-	path = vim/vim/bundle/jinja2-syntax
-	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
 [submodule "tmux/tmux-powerline"]
 	path = tmux/tmux-powerline
 	url = https://github.com/erikw/tmux-powerline.git
