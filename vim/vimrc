@@ -1,19 +1,7 @@
 " ### Plugins. ###
 " Powerline
 let g:Powerline_symbols = 'fancy'
-" Tab compl.
-set completeopt=menuone,longest,preview
-
-" Gundo.
-map <leader>g :GundoToggle<CR>
-
-" TaskList.
-map <leader>td <Plug>TaskList
-
-" SuperTAB.
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-
+"
 " Ctags.
 set tags=~/.mytags
 set tags=./tags;$HOME
@@ -29,12 +17,6 @@ colorscheme jellybeans
 
 " Pathogen.
 execute pathogen#infect()
-
-" Pyhton Mode
-let g:pymode_lint_checker = "pyflakes"
-let g:pymode_lint_cwindow = 0
-let g:pymode_lint_jump = 1
-let g:pymode_folding = 0
 
 "" ### Settings. ###
 " Relode .vimrc.
@@ -91,7 +73,6 @@ set incsearch
 set hlsearch
 set confirm
 set modeline
-set cul                                           " highlight current line
 set tabstop=8
 set expandtab
 set softtabstop=4
