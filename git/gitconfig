@@ -11,6 +11,9 @@
     autosetupmerge = true
 [diff]
     algorithm = patience
+	tool = vimdiff
+[merge]
+	tool = vimdiff
 [color]
     ui = auto
 [color "branch"]
@@ -26,3 +29,5 @@
     added = yellow
     changed = green
     untracked = cyan
+[difftool]
+	prompt = false
