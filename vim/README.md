@@ -10,7 +10,7 @@
 * [Minibufexpl](https://github.com/fholgado/minibufexpl.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate)
 * [Tagbar](https://github.com/majutsushi/tagbar)
-[]()
+* [NesC Syntax](https://github.com/vim-scripts/NesC-Syntax-Highlighting)
 []()
 []()
 []()

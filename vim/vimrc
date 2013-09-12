@@ -18,9 +18,14 @@ syntax enable
 set t_Co=256
 colorscheme jellybeans
 
-
 " Pathogen.
 execute pathogen#infect()
+
+" NesC syntax
+augroup filetypedetect 
+    au! BufRead,BufNewFile *nc setfiletype nc 
+augroup END 
+
 
 "" ### Settings. ###
 " Relode .vimrc.
