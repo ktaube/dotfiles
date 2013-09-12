@@ -9,7 +9,7 @@
 * [Vim-powerline](https://github.com/Lokaltog/vim-powerline)
 * [Minibufexpl](https://github.com/fholgado/minibufexpl.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate)
-[]()
+* [Tagbar](https://github.com/majutsushi/tagbar)
 []()
 []()
 []()
