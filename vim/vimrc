@@ -7,13 +7,17 @@ set tags=~/.mytags
 set tags=./tags;$HOME
 
 " NERDtree.
-map <F7> :NERDTreeToggle<cr>
+map <F6> :NERDTreeToggle<cr>
+"
+" TagBar
+nmap <F7> :TagbarToggle<CR>
 
 " Colorscheme
 syntax enable
     set background=dark
 set t_Co=256
 colorscheme jellybeans
+
 
 " Pathogen.
 execute pathogen#infect()
