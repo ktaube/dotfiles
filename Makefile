@@ -32,3 +32,6 @@ install-tmux:
 install-zsh:
 	rm -f ~/.zshrc
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
+
+install-prerequisites:
+	sudo apt-get install -y vim git-core zsh tmux
