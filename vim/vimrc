@@ -1,14 +1,16 @@
-" ### Plugins. ###
+"""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""
 " Powerline
 let g:Powerline_symbols = 'fancy'
-"
+
 " Ctags.
 set tags=~/.mytags
 set tags=./tags;$HOME
 
 " NERDtree.
 map <F6> :NERDTreeToggle<cr>
-"
+
 " TagBar
 nmap <F7> :TagbarToggle<CR>
 
@@ -27,7 +29,9 @@ augroup filetypedetect
 augroup END 
 
 
-"" ### Settings. ###
+"""""""""""""""""""""""""""""
+" Settings
+"""""""""""""""""""""""""""""
 " Relode .vimrc.
 map <silent> <F12> :source ~/.vimrc<cr>
 
@@ -43,16 +47,6 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-" Spellchecking ENG.
-if version >= 700
-   set spl=en spell
-   set nospell
-endif
-
-if exists("+spelllang")
-   set spelllang=en_us
-endif
-"
 " Paste toogle.
 set pastetoggle=<F10>
 
@@ -72,7 +66,6 @@ iab ans and
 iab teh the
 iab thre there
 
-" Indentation (Python based but should be ok for other languages too.)
 " Common settings.
 set number
 set smartcase
@@ -90,7 +83,6 @@ set encoding=utf-8
 set autoindent
 set autowrite
 set backspace=2
-set dictionary+=/usr/share/dict/words
 set lazyredraw
 set mousemodel=popup
 set scrolloff=2
