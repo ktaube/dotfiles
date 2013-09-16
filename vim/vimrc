@@ -69,7 +69,6 @@ iab thre there
 " Common settings.
 set number
 set smartcase
-set ruler
 set laststatus=2
 set incsearch
 set hlsearch
@@ -80,18 +79,12 @@ set expandtab
 set softtabstop=4
 set shiftwidth=4
 set encoding=utf-8
-set autoindent
 set autowrite
-set backspace=2
 set lazyredraw
 set mousemodel=popup
 set scrolloff=2
-set showcmd
-set showmatch
-set smarttab
 set visualbell
 set virtualedit=block
-set wildmenu
 set wildmode=longest:full,full
 set wildignore+=tags
 set winaltkeys=no
@@ -110,7 +103,6 @@ set splitbelow
 set splitright
 
 if v:version >= 600
-    set autoread
     set foldmethod=marker
     set printoptions=paper:letter
     set sidescrolloff=5

@@ -31,3 +31,6 @@
 [submodule "vim/vim/bundle/nesc_syntax"]
 	path = vim/vim/bundle/nesc_syntax
 	url = https://github.com/vim-scripts/NesC-Syntax-Highlighting.git
+[submodule "vim/vim/bundle/vim-sensible"]
+	path = vim/vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
