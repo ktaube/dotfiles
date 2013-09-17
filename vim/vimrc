@@ -24,9 +24,9 @@ colorscheme jellybeans
 execute pathogen#infect()
 
 " NesC syntax
-augroup filetypedetect 
-    au! BufRead,BufNewFile *nc setfiletype nc 
-augroup END 
+augroup filetypedetect
+    au! BufRead,BufNewFile *nc setfiletype nc
+augroup END
 
 
 """""""""""""""""""""""""""""
@@ -36,9 +36,9 @@ augroup END
 map <silent> <F12> :source ~/.vimrc<cr>
 
 " Jump between splits easely.
-nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
-nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
-nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Disable arrow keys
@@ -89,20 +89,22 @@ set wildmode=longest:full,full
 set wildignore+=tags
 set winaltkeys=no
 filetype indent on
-filetype on  
+filetype on
 filetype plugin indent on
 hi CursorLine term=none cterm=none ctermbg=0      " adjust color
 set mouse=a
 map <F8> :set mouse=r<cr>
 map <F9> :set mouse=a<cr>
-set title 
+set title
 set titlestring=VIM:\ %F
 set backupdir=~/.backup,.,/tmp
 set directory=~/.backup,/tmp
 set splitbelow
 set splitright
-set list
-set listchars
+if !(&filetype == "txt")
+    set list                " show special characters
+    set listchars=tab:→\ ,trail:·,nbsp:·
+endif"
 
 if v:version >= 600
     set foldmethod=marker
