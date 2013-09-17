@@ -101,6 +101,8 @@ set backupdir=~/.backup,.,/tmp
 set directory=~/.backup,/tmp
 set splitbelow
 set splitright
+set list
+set listchars
 
 if v:version >= 600
     set foldmethod=marker
