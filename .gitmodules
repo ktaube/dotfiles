@@ -40,3 +40,6 @@
 [submodule "vim/vim/bundle/vim-markdown"]
 	path = vim/vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/vim/bundle/robotframework"]
+	path = vim/vim/bundle/robotframework
+	url = https://github.com/mfukar/robotframework-vim.git
