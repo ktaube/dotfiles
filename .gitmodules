@@ -43,6 +43,3 @@
 [submodule "vim/vim/bundle/robotframework"]
 	path = vim/vim/bundle/robotframework
 	url = https://github.com/mfukar/robotframework-vim.git
-[submodule "vim/vim/bundle/YouCompleteMe"]
-	path = vim/vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
