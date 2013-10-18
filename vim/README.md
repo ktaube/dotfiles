@@ -13,5 +13,6 @@
 * [NesC Syntax](https://github.com/vim-scripts/NesC-Syntax-Highlighting)
 * [Syntastci](https://github.com/scrooloose/syntastic)
 * [vim-sensible](https://github.com/tpope/vim-sensible)
-* [vim-markdown](https://github.com/plasticboy/vim-markdown.git)
+* [vim-markdown](https://github.com/plasticboy/vim-markdown)
+* [vim-json](https://github.com/elzr/vim-json)
 []()

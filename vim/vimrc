@@ -69,6 +69,7 @@ iab thre there
 " Common settings.
 set number
 set smartcase
+set ignorecase
 set laststatus=2
 set incsearch
 set hlsearch
@@ -101,10 +102,6 @@ set backupdir=~/.backup,.,/tmp
 set directory=~/.backup,/tmp
 set splitbelow
 set splitright
-if !(&filetype == "txt")
-    set list                " show special characters
-    set listchars=tab:→\ ,trail:·,nbsp:·
-endif"
 
 if v:version >= 600
     set foldmethod=marker

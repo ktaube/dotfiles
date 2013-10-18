@@ -43,3 +43,6 @@
 [submodule "vim/vim/bundle/robotframework"]
 	path = vim/vim/bundle/robotframework
 	url = https://github.com/mfukar/robotframework-vim.git
+[submodule "vim/vim/bundle/vim-json"]
+	path = vim/vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json.git
