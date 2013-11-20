@@ -1,0 +1,15 @@
+
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+alias subl="/cygdrive/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
+
+# Used only so Jeti eclipse plugin for tinyos could 
+# detect tinyos source path
+export TOSROOT=/opt/tinyos
+export TOSDIR=/opt/tinyos/tos
+
+subvim() {
+    subl $1 &
+}
+alias vim="subvim"
