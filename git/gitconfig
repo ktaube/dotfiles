@@ -3,7 +3,6 @@
     email = t.kristaps@gmail.com
 [core]
     excludesfile = ~/.gitignore
-    autocrlf = false
     editor = /usr/local/bin/vim
 [push]
     default=current
