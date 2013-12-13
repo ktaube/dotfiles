@@ -1,11 +1,15 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=(~/.zsh/completion $fpath) 
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+ZSH_THEME="amuse"
 
 plugins=(git)
 
@@ -25,3 +29,8 @@ fi
 if hash xclip 2>/dev/null; then
     alias xclip="xclip -selection c"
 fi
+
+if [ -f "$HOME/Tools/scripts/fabfile.py" ]; then
+    alias ngauto="nocorrect fab -f $HOME/Tools/scripts/fabfile.py"
+fi
+
