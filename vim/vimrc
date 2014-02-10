@@ -18,7 +18,7 @@ nmap <F7> :TagbarToggle<CR>
 syntax enable
     set background=light
 set t_Co=256
-colorscheme solarized
+colorscheme jellybeans
 
 " Pathogen.
 execute pathogen#infect()
