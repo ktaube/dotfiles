@@ -2,7 +2,10 @@ install: install-vim install-zsh install-python install-bash \
 	 install-git install-tmux
 
 install-vim:
-	./submodule_init
+	git submodule init
+	git submodule update
+	git submodule foreach git submodule init
+	git submodule foreach git submodule update
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
@@ -22,8 +25,8 @@ install-git:
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 
 install-tmux:
-	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-	ln -s `pwd`/tmux/basic.sh `pwd`/tmux/tmux-powerline/themes/basic_tmp.sh
+	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh || true
+	ln -s `pwd`/tmux/basic.sh `pwd`/tmux/tmux-powerline/themes/basic_tmp.sh || true
 	rm -f ~/.tmux-powerlinerc
 	ln -s `pwd`/tmux/tmux-powerlinerc ~/.tmux-powerlinerc
 	rm -f ~/.tmux.conf
@@ -33,5 +36,5 @@ install-zsh:
 	rm -f ~/.zshrc
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
 
-install-prerequisites:
-	sudo apt-get install -y vim git-core zsh tmux
+install-ubuntu:
+	sudo apt-get install -y vim git-core zsh tmux xclip tree
