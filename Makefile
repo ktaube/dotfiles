@@ -27,8 +27,6 @@ install-git:
 install-tmux:
 	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh || true
 	ln -s `pwd`/tmux/basic.sh `pwd`/tmux/tmux-powerline/themes/basic_tmp.sh || true
-	rm -f ~/.tmux-powerlinerc
-	ln -s `pwd`/tmux/tmux-powerlinerc ~/.tmux-powerlinerc
 	rm -f ~/.tmux.conf
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
 
