@@ -18,15 +18,10 @@ nmap <F7> :TagbarToggle<CR>
 syntax enable
     set background=light
 set t_Co=256
-colorscheme jellybeans
+colorscheme solarized
 
 " Pathogen.
 execute pathogen#infect()
-
-" NesC syntax
-augroup filetypedetect
-    au! BufRead,BufNewFile *nc setfiletype nc
-augroup END
 
 
 """""""""""""""""""""""""""""
