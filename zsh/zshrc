@@ -36,3 +36,7 @@ if [ -f "$HOME/Tools/scripts/fabfile.py" ]; then
     alias ngauto="nocorrect fab -f $HOME/Tools/scripts/fabfile.py"
 fi
 
+export GIT_EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
+

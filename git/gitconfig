@@ -3,7 +3,7 @@
     email = t.kristaps@gmail.com
 [core]
     excludesfile = ~/.gitignore
-    editor = /usr/local/bin/vim
+	editor = vim
 [push]
     default=current
 [branch]
@@ -30,3 +30,5 @@
     untracked = cyan
 [difftool]
 	prompt = false
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
