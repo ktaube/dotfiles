@@ -98,6 +98,10 @@ set directory=~/.backup,/tmp
 set splitbelow
 set splitright
 
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
+
 if v:version >= 600
     set foldmethod=marker
     set printoptions=paper:letter

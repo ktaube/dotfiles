@@ -49,3 +49,15 @@
 [submodule "vim/vim/bundle/ack-vim"]
 	path = vim/vim/bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/vim/bundle/emmet-vim"]
+	path = vim/vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/vim/bundle/vim-less"]
+	path = vim/vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "vim-fugitive"]
+	path = vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim/bundle/vim-fugitive"]
+	path = vim/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
