@@ -109,4 +109,4 @@ if v:version >= 600
     set mouse=nvi
 endif
 
-
+nnoremap <Leader>m :w <BAR> !make -C ~/Desktop/ciparnica css<CR><space>
