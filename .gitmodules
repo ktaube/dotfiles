@@ -4,9 +4,6 @@
 [submodule "vim/vim/bundle/surround"]
 	path = vim/vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/vim/bundle/minibufexpl"]
-	path = vim/vim/bundle/minibufexpl
-	url = https://github.com/sontek/minibufexpl.vim.git
 [submodule "vim/vim/bundle/nerdtree"]
 	path = vim/vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
