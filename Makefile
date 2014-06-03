@@ -9,7 +9,6 @@ install-vim:
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
-	# run 'git submodule update --init' in jedi-vim folder
 
 install-python:
 	rm -f ~/.pythonstartup.py
