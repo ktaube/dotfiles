@@ -49,12 +49,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if hash zsh 2>/dev/null; then
-    export SHELL="bin/zsh"
-fi
-
 alias tmuxa='tmux attach-session -t'
 alias tmuxn='tmux new-session -s'
+alias tmuxl='tmux list-sessions'
 
 # Python
 export PYTHONSTARTUP=~/.pythonstartup.py

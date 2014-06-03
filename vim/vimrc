@@ -4,15 +4,8 @@
 " Powerline
 let g:Powerline_symbols = 'fancy'
 
-" Ctags.
-set tags=~/.mytags
-set tags=./tags;$HOME
-
 " NERDtree.
 map <F6> :NERDTreeToggle<cr>
-
-" TagBar
-nmap <F7> :TagbarToggle<CR>
 
 " Colorscheme
 syntax enable
@@ -42,14 +35,14 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-" Paste toogle.
-set pastetoggle=<F10>
+map <F8> :set mouse=r<cr>
+map <F9> :set mouse=a<cr>
 
 " Remap column symbol to semicolin.
 nore ; :
 nore , ;
 
-" Common typo fixes.
+" Common typos fixes.
 :command WQ wq
 :command Wq wq
 :command W w
@@ -84,23 +77,12 @@ set virtualedit=block
 set wildmode=longest:full,full
 set wildignore+=tags
 set winaltkeys=no
-filetype indent on
-filetype on
-filetype plugin indent on
-hi CursorLine term=none cterm=none ctermbg=0      " adjust color
-set mouse=a
-map <F8> :set mouse=r<cr>
-map <F9> :set mouse=a<cr>
 set title
 set titlestring=VIM:\ %F
 set backupdir=~/.backup,.,/tmp
 set directory=~/.backup,/tmp
 set splitbelow
 set splitright
-
-if exists('+colorcolumn')
-    set colorcolumn=80
-endif
 
 if v:version >= 600
     set foldmethod=marker
@@ -109,4 +91,12 @@ if v:version >= 600
     set mouse=nvi
 endif
 
-nnoremap <Leader>m :w <BAR> !make -C ~/Desktop/ciparnica css<CR><space>
+filetype on
+filetype indent on
+filetype plugin indent on
+hi CursorLine term=none cterm=none ctermbg=0      " adjust color
+set mouse=a
+
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
