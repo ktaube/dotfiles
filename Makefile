@@ -1,5 +1,9 @@
-install: install-vim install-zsh install-python install-bash \
-	 install-git install-tmux
+install: install-zsh \
+         install-bash \
+         install-git \
+         install-tmux \
+         install-python \
+	 install-vim
 
 install-vim:
 	git submodule init
