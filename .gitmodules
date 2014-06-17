@@ -61,3 +61,9 @@
 [submodule "vim/vim/bundle/vim-eunuch"]
 	path = vim/vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/vim/bundle/vim-golang"]
+	path = vim/vim/bundle/vim-golang
+	url = https://github.com/jnwhiteh/vim-golang.git
+[submodule "vim/vim/bundle/vim-unite"]
+	path = vim/vim/bundle/vim-unite
+	url = https://github.com/Shougo/unite.vim.git
