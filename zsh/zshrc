@@ -41,6 +41,17 @@ if [ -f "$HOME/Tools/scripts/fabfile.py" ]; then
     alias ngauto="nocorrect fab -f $HOME/Tools/scripts/fabfile.py"
 fi
 
+alias tmuxa='tmux attach-session -t'
+alias tmuxn='tmux new-session -s'
+alias tmuxl='tmux list-sessions'
+
+# Python
+export PYTHONSTARTUP=~/.pythonstartup.py
+
+if [ x`which ack-grep` != x ]; then
+  alias ack=ack-grep
+fi
+
 export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
