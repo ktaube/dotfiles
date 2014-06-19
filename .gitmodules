@@ -64,3 +64,9 @@
 [submodule "vim/vim/bundle/vim-unite"]
 	path = vim/vim/bundle/vim-unite
 	url = https://github.com/Shougo/unite.vim.git
+[submodule "vim/vim/bundle/vim-git"]
+	path = vim/vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git.git
+[submodule "vim/vim/bundle/vim-airline"]
+	path = vim/vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
