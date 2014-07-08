@@ -6,39 +6,41 @@ install: install-zsh \
 	 install-vim
 
 install-vim:
+	mv ~/.vim ~/tmp/.vim_bak || true
+	mv ~/.vimrc ~/tmp/.vimrc_bak || true
+	ln -s `pwd`/vim/vim ~/.vim
+	ln -s `pwd`/vim/vimrc ~/.vimrc
 	git submodule init
 	git submodule update
 	git submodule foreach git submodule init
 	git submodule foreach git submodule update
-	rm -rf ~/.vim ~/.vimrc
-	ln -s `pwd`/vim/vim ~/.vim
-	ln -s `pwd`/vim/vimrc ~/.vimrc
 
 install-python:
-	rm -f ~/.pythonstartup.py
+	mv ~/.pythonstartup.py /tmp/.pythonstartup.py_bak || true
 	ln -s `pwd`/python/pythonstartup.py ~/.pythonstartup.py
 
 install-bash:
-	rm -f ~/.profile ~/.bashrc
+	mv ~/.profile /tmp/.profile_bak || true
+	mv ~/.bashrc /tmp/.bashrc_bak || true
 	ln -s `pwd`/bash/bashrc ~/.bashrc
 	ln -s `pwd`/bash/profile ~/.profile
 
 install-git:
-	rm -f ~/.gitconfig
+	mv ~/.gitconfig /tmp/.gitconfig_bak || true
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 
 install-tmux:
 	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh || true
 	ln -s `pwd`/tmux/basic.sh `pwd`/tmux/tmux-powerline/themes/basic_tmp.sh || true
-	rm -f ~/.tmux.conf
+	mv ~/.tmux.conf || true
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
 
 install-zsh:
-	rm -f ~/.zshrc
+	mv ~/.zshrc /tmp/.zshrc_bak || true
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
 
 install-ubuntu:
-	sudo apt-get install -y vim git-core zsh tmux xclip tree
+	sudo apt-get install -y vim git-core zsh tmux xclip tree ack-grep
 
 download-gnome-solarized:
 	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git ~/.gnome_solarized
