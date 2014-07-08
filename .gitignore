@@ -5,3 +5,4 @@ vim/.netrwhist
 vim/sessions
 *.VimballRecord
 *.netrwhist
+vim/vim/bundle/**

@@ -1,6 +1,45 @@
 """""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""
+
+" be iMproved, required
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'elzr/vim-json'
+Plugin 'groenewege/vim-less'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'mfukar/robotframework-vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'nono/vim-handlebars'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'Shougo/unite.vim'
+
+" end of Plugins
+call vundle#end()
+filetype plugin indent on
+
+"""""""""""""""""""""""""""""
+" Plugin Settings
+"""""""""""""""""""""""""""""
 " Powerline
 let g:Powerline_symbols = 'fancy'
 
@@ -104,9 +143,7 @@ if v:version >= 600
     set mouse=nvi
 endif
 
-filetype on
 filetype indent on
-filetype plugin indent on
 hi CursorLine term=none cterm=none ctermbg=0      " adjust color
 set mouse=a
 
