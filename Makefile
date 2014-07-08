@@ -14,6 +14,7 @@ install-vim:
 	git submodule update
 	git submodule foreach git submodule init
 	git submodule foreach git submodule update
+	vim +BundleInstall +Helptags +qall
 
 install-python:
 	mv ~/.pythonstartup.py /tmp/.pythonstartup.py_bak || true
