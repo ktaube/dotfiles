@@ -1,9 +1,9 @@
-"""""""""""""""""""""""""""""
-" Plugins
-"""""""""""""""""""""""""""""
-
-" be iMproved, required
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" ================ Vundle Plugins ================
+
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -37,17 +37,7 @@ Plugin 'Shougo/unite.vim'
 call vundle#end()
 filetype plugin indent on
 
-"""""""""""""""""""""""""""""
-" Plugin Settings
-"""""""""""""""""""""""""""""
-" Powerline
-let g:Powerline_symbols = 'fancy'
-
-" Colorscheme
-syntax enable
-    set background=light
-set t_Co=256
-colorscheme solarized
+" ================ Plugin Settings ===============
 
 " Pathogen.
 execute pathogen#infect()
@@ -69,9 +59,8 @@ let g:ctrlp_max_depth = 100
 let g:gitgutter_map_keys = 0
 map <F5> :GitGutterToggle<cr>
 
-"""""""""""""""""""""""""""""
-" Settings
-"""""""""""""""""""""""""""""
+" ================ General Settings ==============
+
 " Relode .vimrc.
 map <silent> <F12> :source ~/.vimrc<cr>
 
@@ -82,15 +71,16 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Disable arrow keys
-map <Left> <Nop>
+map <Left>  <Nop>
 map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+map <Up>    <Nop>
+map <Down>  <Nop>
 
+" set mouse gui options
 map <F8> :set mouse=r<cr>
 map <F9> :set mouse=a<cr>
 
-" Remap column symbol to semicolin.
+" Remap column (super) symbol to semicolin.
 nore ; :
 nore , ;
 
@@ -106,45 +96,49 @@ iab ans and
 iab teh the
 iab thre there
 
-" Common settings.
-set number
-set smartcase
-set ignorecase
-set laststatus=2
-set incsearch
-set hlsearch
+" General config
+set number                      "Line numbers
+set visualbell                  "No sounds
+set laststatus=2                "display the status line always
 set confirm
-set modeline
-set tabstop=8
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-set encoding=utf-8
-set autowrite
-set lazyredraw
-set mousemodel=popup
-set scrolloff=2
-set visualbell
-set virtualedit=block
-set wildmode=longest:full,full
-set wildignore+=tags
-set winaltkeys=no
-set title
+set scrolloff=2                 "auto scroll text
+set modeline                    "enable modline
+set encoding=utf-8              "deflault encouding
+set autowrite                   "prevent asking if you want to save the curbuf
+set lazyredraw                  "don't redraw when don't have to
+set mousemodel=popup            "enable a popup menu on right click in GUI vim
+set sidescrolloff=5             "always at least five lines visible above/below
+set virtualedit=block           "cursr can be positioned where there is no char
+set splitright                  "make the new window appear on the right
+filetype indent on
+
+" Colorscheme
+syntax enable                   "turn on syntax highlighting
+set background=light            "set background
+set t_Co=256                    "terminal colors
+colorscheme solarized           "set colorscheme
+
+" Searching
+set ignorecase                  "case insensitive search
+set smartcase                   "if uppercase letter, it is case sensitive
+set incsearch                   "move the cursor to the matched string
+set hlsearch                    "highlight search matches
+
+" Indentation
+set tabstop=8                   "set how many columns a tab counts for
+set expandtab                   "insert spaces on tab
+set softtabstop=4               "set how many columns vim inserts on tab
+set shiftwidth=4                "how many columns with >> and <<
+
+" Title
+set title                       "automaticly set vim windows title
 set titlestring=VIM:\ %F
+
+" Swap file location
 set backupdir=~/.backup,.,/tmp
 set directory=~/.backup,/tmp
-set splitbelow
-set splitright
 
-if v:version >= 600
-    set foldmethod=marker
-    set printoptions=paper:letter
-    set sidescrolloff=5
-    set mouse=nvi
-endif
-
-filetype indent on
-hi CursorLine term=none cterm=none ctermbg=0      " adjust color
+set foldmethod=marker          "special chars to flag the start and end of fold
 set mouse=a
 
 if exists('+colorcolumn')
