@@ -3,7 +3,7 @@ install: install-zsh \
          install-git \
          install-tmux \
          install-python \
-	 install-vim
+         install-vim
 
 install-vim:
 	mv ~/.vim /tmp/.vim_bak || true
@@ -31,7 +31,6 @@ install-git:
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 
 install-tmux:
-	wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh || true
 	ln -s `pwd`/tmux/basic.sh `pwd`/tmux/tmux-powerline/themes/basic_tmp.sh || true
 	mv ~/.tmux.conf /tmp/.tmux.conf_bak || true
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf

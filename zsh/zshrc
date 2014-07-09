@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
 tmux source-file ~/.tmux.conf > /dev/null
 
