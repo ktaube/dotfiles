@@ -35,6 +35,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-commentary'
+Plugin 'lepture/vim-jinja.git'
 
 " end of Plugins
 call vundle#end()
