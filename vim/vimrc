@@ -37,6 +37,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja.git'
+Plugin 'klen/python-mode.git'
 
 " end of Plugins
 call vundle#end()
@@ -54,6 +55,11 @@ nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
 nnoremap <leader>e :<C-u>Unite -buffer-name=buffer -start-insert buffer<cr>
 nnoremap <leader>f :<C-u>Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>t :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
+
+" Python mode
+" disable python-mode autocompleteon so i doesn't conflict with YouCompleteMe
+let g:pymode_rope_completion = 0
+let g:pymode_breakpoint = 0
 
 " vim-airline
 let g:airline_powerline_fonts = 1
