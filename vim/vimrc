@@ -60,6 +60,7 @@ nnoremap <leader>t :<C-u>Unite -buffer-name=files -start-insert file_rec/async<c
 " disable python-mode autocompleteon so i doesn't conflict with YouCompleteMe
 let g:pymode_rope_completion = 0
 let g:pymode_breakpoint = 0
+let g:pymode_folding = 0
 
 " vim-airline
 let g:airline_powerline_fonts = 1
