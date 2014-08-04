@@ -5,7 +5,7 @@ tmux source-file ~/.tmux.conf > /dev/null
 
 # COMPLETION SETTINGS
 # add custom completion scripts
-fpath=(~/.zsh/completion $fpath) 
+fpath=(~/.zsh/completion $fpath)
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -56,3 +56,6 @@ export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
+if [ $VIRTUAL_ENV ]; then
+    . "$VIRTUAL_ENV/bin/activate"
+fi
