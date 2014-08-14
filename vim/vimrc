@@ -38,6 +38,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja.git'
 Plugin 'klen/python-mode.git'
+Plugin 'majutsushi/tagbar'
 
 " end of Plugins
 call vundle#end()
@@ -88,6 +89,13 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
+
+" Tagbar
+nmap <F7> :TagbarToggle<CR>
+
+" Ack
+" Search string under cursor
+noremap <Leader>a :Ack <cword><cr>
 
 " ================ General Settings ==============
 
