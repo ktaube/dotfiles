@@ -45,5 +45,8 @@ install-zsh:
 install-ubuntu:
 	sudo apt-get install -y vim git-core zsh tmux xclip tree ack-grep
 
+set-pycharm-config:
+	cp -r pycharm/config ~/.PyCharm30
+
 download-gnome-solarized:
 	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git ~/.gnome_solarized
