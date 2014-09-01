@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="file-type">
+      <project id="foobar" values="Python,XML,UNKNOWN" />
+      <project id="ceilometer" values="Images,UNKNOWN,LESS,PLAIN_TEXT,JavaScript,Python,XML,C++,YAML,Ini,ARCHIVE,SQL,Native,HTML,Locale,Mako,ReST,JSON,Cython,CSS" />
+      <project id="openstack" values="Native,C++,PATCH,PLAIN_TEXT,Images,UNKNOWN,SQL files,ReST,HTML,DTD,Python,XML" />
+    </group>
+    <group name="run-configuration-type">
+      <project id="ceilometer" values="tests.Unittests" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="ceilometer" values="DEFAULT" />
+    </group>
+    <group name="py-interpreter">
+      <project id="foobar" values="Python 3.4.1" />
+      <project id="ceilometer" values="Python 2.7.3" />
+      <project id="openstack" values="Python 2.7.3" />
+    </group>
+    <group name="vcs">
+      <project id="ceilometer" values="Git" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="ceilometer" values="Project,Project" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="ceilometer" values="tests.Unittests" />
+    </group>
+    <group name="py-packages">
+      <project id="ceilometer" values="python-swiftclient,stevedore,croniter,posix_ipc,python-neutronclient,WSME,pecan,PyYAML,happybase,oslo.config,SQLAlchemy,python-ceilometerclient,eventlet,anyjson,python-glanceclient,iso8601,WebOb,pytz,alembic,sqlalchemy-migrate,pbr,netaddr,PasteDeploy,python-keystoneclient,python-novaclient,jsonschema,oslo.vmware,six,pysnmp,keystonemiddleware,oslo.messaging,jsonpath-rw,lxml,msgpack-python,lockfile,requests,argparse" />
+      <project id="openstack" values="oslo.utils,doc8,MySQL-python,kazoo,pep8,posix_ipc,coinor.pulp,lesscpy,redis,oslo.i18n,lockfile,python-marconiclient,bash8,sockjs-tornado,wrapt,msgpack-python,python-designateclient,feedparser,keystonemiddleware,suds,testtools,eventlet,python-ceilometerclient,python-memcached,dnspython,os-cloud-config,nose,PrettyTable,iso8601,python-openstackclient,docutils,requests,python-cinderclient,paramiko,django-bootstrap-form,pyudev,gear,mox3,PyYAML,Django,jsonrpclib,pbr,WSME,rfc3986,python-swiftclient,pyOpenSSL,mock,boto,selenium,lxml,pyflakes,alembic,django_compressor,stevedore,python-ironicclient,oslo.vmware,python-glanceclient,cryptography,oslo.db,nose-exclude,Babel,pylint,XenAPI,simplejson,Mako,Paste,decorator,WebOb,coverage,netifaces,python-heatclient,configobj,pip,hgtools,oslo.config,qpid-python,wsgiref,ldappool,osprofiler,requests-kerberos,cliff,testresources,keyring,cmd2,httplib2,os-apply-config,trollius,Jinja2,flake8,pyasn1,python-keystoneclient,django-pyscss,pysnmp,passlib,mox,pymongo,wheel,python-seamicroclient,libvirt-python,jsonpatch,os-refresh-config,SQLAlchemy,happybase,sphinxcontrib-docbookrestapi,python-barbicanclient,testscenarios,unittest2,xattr,oslotest,openstack.nose_plugin,pystache,futures,Pillow,python-troveclient,pecan,sphinxcontrib-pecanwsme,sphinxcontrib-httpdomain,diskimage-builder,pysendfile,cliff-tablib,six,psutil,oslo.messaging,pycrypto,openstack-doc-tools,nosexcover,netaddr,pyparsing,oauthlib,taskflow,fixtures,websockify,zake,ordereddict,psycopg2,testrepository,pycadf,python-saharaclient,python-ldap,oslosphinx,discover,django-nose,xvfbwrapper,pyghmi,falcon,sqlalchemy-migrate,pysqlite,pexpect,requests-mock,Flask,kombu,hacking,python-subunit,PasteDeploy,jsonpath-rw,warlock,rtslib-fb,oslo.rootwrap,python-novaclient,ddt,extras,nosehtmloutput,pyzmq,greenlet,networkx,retrying,httpretty,django_openstack_auth,jsonschema,dogpile.cache,croniter,argcomplete,WebTest,tripleo-image-elements,proboscis,os-collect-config,argparse,cffi,python-neutronclient,Routes,pytz,wsgi_intercept,nodeenv,greenio,anyjson" />
+    </group>
+    <group name="module type">
+      <project id="foobar" values="PYTHON_MODULE" />
+      <project id="ceilometer" values="PYTHON_MODULE" />
+      <project id="openstack" values="PYTHON_MODULE" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="1" />
+      <entry feature="NewDirectoryProjectAction.empty" count="2" />
+      <entry feature="execute.tests.Debug" count="1" />
+      <entry feature="execute.tests.Run" count="6" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="1" />
+      <entry feature="ide.settings.Font" count="3" />
+      <entry feature="ide.settings.Keymap" count="1" />
+      <entry feature="ide.settings.Project_Interpreter" count="1" />
+      <entry feature="ide.settings.Python_Integrated_Tools" count="1" />
+      <entry feature="ideaapp.started" count="12" />
+    </counts>
+  </component>
+</application>
+

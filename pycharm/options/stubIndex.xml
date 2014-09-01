@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="FileBasedIndex">
+    <option name="registeredIndices">
+      <list>
+        <option value="js.element.qualifiedName" />
+        <option value="JS.class.super" />
+        <option value="dom.elementClass" />
+        <option value="dom.namespaceKey" />
+        <option value="Scss.placeholder.selector" />
+        <option value="Py.instanceAttribute.name" />
+        <option value="Py.variable.shortName" />
+        <option value="Py.class.super" />
+        <option value="Py.function.shortName" />
+        <option value="Py.class.shortNameInsensitive" />
+        <option value="Py.class.shortName" />
+        <option value="js.members.shortName" />
+        <option value="js.qualified.shortName" />
+        <option value="sql.names" />
+        <option value="sql.column.name" />
+        <option value="sql.table.shortName" />
+        <option value="ini.property.key" />
+        <option value="Django.foreignKey" />
+        <option value="Less.mixins" />
+        <option value="Less.variables" />
+        <option value="Scss.variable" />
+        <option value="Scss.function" />
+        <option value="Scss.mixin" />
+        <option value="Stylus.variables" />
+        <option value="JS.class.implements" />
+      </list>
+    </option>
+  </component>
+</application>
+
