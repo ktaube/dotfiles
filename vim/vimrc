@@ -39,6 +39,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja.git'
 Plugin 'klen/python-mode.git'
 Plugin 'majutsushi/tagbar'
+Plugin 'dag/vim2hs.git'
 
 " end of Plugins
 call vundle#end()
