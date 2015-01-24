@@ -40,6 +40,9 @@ Plugin 'lepture/vim-jinja.git'
 Plugin 'klen/python-mode.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'honza/dockerfile.vim.git'
+Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
+Bundle 'derekwyatt/vim-scala'
 
 " end of Plugins
 call vundle#end()
