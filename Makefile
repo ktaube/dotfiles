@@ -44,6 +44,7 @@ install-zsh:
 
 install-ubuntu:
 	sudo apt-get install -y vim git-core zsh tmux xclip tree ack-grep
+	sudo pip install git+ssh://git@github.com:kennethreitz/legit.git
 
 set-pycharm-config:
 	cp -r pycharm/config ~/.PyCharm30

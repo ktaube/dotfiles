@@ -31,3 +31,12 @@
     prompt = false
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    branches = !legit branches
+    graft = !legit graft
+    harvest = !legit harvest
+    publish = !legit publish
+    unpublish = !legit unpublish
+    sprout = !legit sprout
+    sync = !legit sync
+    switch = !legit switch
+    resync = !legit resync
