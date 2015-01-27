@@ -17,7 +17,7 @@ install-vim:
 	mv ~/.vimrc /tmp/.vimrc_bak || true
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
-	vim +BundleInstall +Helptags +qall
+	vim +BundleInstall +Helptags +qall +GoInstallBinaries
 
 install-python:
 	mv ~/.pythonstartup.py /tmp/.pythonstartup.py_bak || true
@@ -46,9 +46,6 @@ install-zsh:
 install-ubuntu:
 	sudo apt-get install -y vim git-core zsh tmux xclip tree ack-grep
 	sudo pip install git+ssh://git@github.com:kennethreitz/legit.git
-
-set-pycharm-config:
-	cp -r pycharm/config ~/.PyCharm30
 
 download-gnome-solarized:
 	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git ~/.gnome_solarized

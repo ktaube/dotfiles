@@ -59,3 +59,7 @@ export EDITOR=vim
 if [ $VIRTUAL_ENV ]; then
     . "$VIRTUAL_ENV/bin/activate"
 fi
+
+export PATH=$PATH:$HOME/Development/tools/go/bin
+export GOPATH=$HOME/Development/workspace/go
+export GOROOT=$HOME/Development/tools/go
