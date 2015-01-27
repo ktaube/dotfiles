@@ -37,6 +37,7 @@ install-tmux:
 	ln -s `pwd`/tmux/basic.sh `pwd`/tmux/tmux-powerline/themes/basic_tmp.sh || true
 	mv ~/.tmux.conf /tmp/.tmux.conf_bak || true
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
+	ln -s `pwd`/tmux/tmuxinator ~/.tmuxinator
 
 install-zsh:
 	mv ~/.zshrc /tmp/.zshrc_bak || true
