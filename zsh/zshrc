@@ -14,7 +14,8 @@ fpath=(~/.zsh/completion $fpath)
 
 ZSH_THEME="kphoen"
 
-plugins=(git)
+plugins=(git fabric bower celery docker pip python redis-cli scala vagrant
+         virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +61,8 @@ if [ $VIRTUAL_ENV ]; then
     . "$VIRTUAL_ENV/bin/activate"
 fi
 
-export PATH=$PATH:$HOME/Development/tools/go/bin
-export GOPATH=$HOME/Development/workspace/go
-export GOROOT=$HOME/Development/tools/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+
+export PATH=$PATH:$HOME/Development/tools
+[[ -s "/home/ktaube/.gvm/scripts/gvm" ]] && source "/home/ktaube/.gvm/scripts/gvm"
