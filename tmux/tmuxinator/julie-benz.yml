@@ -1,9 +1,0 @@
-# ~/.tmuxinator/julie-benz.yml
-
-name: julie-benz
-root: ~/Develpment/workspace/reachly
-
-pre_window: workon julie-benz
-
-windows:
-  - thor: ssh thor
