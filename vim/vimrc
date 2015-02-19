@@ -63,6 +63,14 @@ nnoremap <leader>e :<C-u>Unite -buffer-name=buffer -start-insert buffer<cr>
 nnoremap <leader>f :<C-u>Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>t :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
 
+" Golang
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+let g:go_fmt_command = "goimports"
+
 " Python mode
 " disable python-mode autocompleteon so i doesn't conflict with YouCompleteMe
 let g:pymode_rope_completion = 0
