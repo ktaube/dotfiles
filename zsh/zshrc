@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
+export DEVELOPMENT_ROOT=$HOME/Development
+
 tmux source-file ~/.tmux.conf > /dev/null
 
 # COMPLETION SETTINGS
@@ -21,10 +23,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-
-# Additional $PATH variables
-export PATH=$PATH:/home/ktaube/Development/tools/android-studio/sdk/tools
-export PATH=$PATH:/home/ktaube/Development/tools/android-studio/sdk/platform-tools
 
 TERM=screen-256color
 
@@ -61,8 +59,10 @@ if [ $VIRTUAL_ENV ]; then
     . "$VIRTUAL_ENV/bin/activate"
 fi
 
+export GOROOT=$DEVELOPMENT_ROOT/tools/go
+export GOPATH=$DEVELOPMENT_ROOT/workspace/gopath
+
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
-export PATH=$PATH:$HOME/Development/tools
-[[ -s "/home/ktaube/.gvm/scripts/gvm" ]] && source "/home/ktaube/.gvm/scripts/gvm"
+export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin

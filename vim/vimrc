@@ -27,7 +27,6 @@ Plugin 'fatih/vim-go'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'mfukar/robotframework-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nono/vim-handlebars'
 Plugin 'nanotech/jellybeans.vim'
@@ -38,6 +37,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja.git'
 Plugin 'klen/python-mode.git'
+Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'dag/vim2hs.git'
 Plugin 'honza/dockerfile.vim.git'
@@ -69,6 +69,7 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dd <Plug>(go-doc)
 let g:go_fmt_command = "goimports"
 
 " Python mode
@@ -106,6 +107,9 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " Tagbar
 nmap <F7> :TagbarToggle<CR>
+
+" Nerdtree
+nmap <F6> :NERDTreeToggle %:p:h<CR>
 
 " Ack
 " Search string under cursor

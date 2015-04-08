@@ -69,4 +69,3 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 fi
-[[ -s "/home/ktaube/.gvm/scripts/gvm" ]] && source "/home/ktaube/.gvm/scripts/gvm"
