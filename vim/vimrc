@@ -77,6 +77,8 @@ let g:go_fmt_command = "goimports"
 let g:pymode_rope_completion = 0
 let g:pymode_breakpoint = 0
 let g:pymode_folding = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -93,7 +95,7 @@ map <F5> :GitGutterToggle<cr>
 " YouCompleteMe
 " set default conf file
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_auto_trigger = 0      "turn off auto trigger
+" let g:ycm_auto_trigger = 0      "turn off auto trigger
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " set <tab> free so it can be used by Ultisnip
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
@@ -104,6 +106,10 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
+
+" Set path where to look for custom snippets
+let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
+let g:UltiSnipsSnippetDirectories = ['ultisnips']
 
 " Tagbar
 nmap <F7> :TagbarToggle<CR>

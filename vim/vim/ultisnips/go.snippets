@@ -1,0 +1,16 @@
+
+snippet cout "Cout" b
+fmt.Println(${0:${VISUAL}})
+endsnippet
+
+snippet tcc "Parent Convey" b
+Convey("${0:desc}", t, func() {
+	${1:${VISUAL}}
+})
+endsnippet
+
+snippet tc "Child Convey" b
+Convey("${0:desc}", func() {
+	${1:${VISUAL}}
+})
+endsnippet
