@@ -4,13 +4,18 @@ fmt.Println(${0:${VISUAL}})
 endsnippet
 
 snippet tcc "Parent Convey" b
-Convey("${0:desc}", t, func() {
-	${1:${VISUAL}}
+Convey("${1:desc}", t, func() {
+	${0:${VISUAL}}
 })
 endsnippet
 
 snippet tc "Child Convey" b
-Convey("${0:desc}", func() {
-	${1:${VISUAL}}
+Convey("${1:desc}", func() {
+	${0:${VISUAL}}
 })
 endsnippet
+
+snippet jsond "JSON field with description"
+\`json:"${1:displayName}" description:"${2:description}"\`
+endsnippet
+

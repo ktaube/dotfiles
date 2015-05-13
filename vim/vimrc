@@ -50,6 +50,8 @@ Bundle 'derekwyatt/vim-scala'
 call vundle#end()
 filetype plugin indent on
 
+set wildignore+=*/Godeps/*
+
 " ================ Plugin Settings ===============
 
 " Pathogen.
@@ -109,7 +111,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " Set path where to look for custom snippets
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
-let g:UltiSnipsSnippetDirectories = ['ultisnips']
+let g:UltiSnipsSnippetDirectories = ['ultisnips', 'UltiSnips']
 
 " Tagbar
 nmap <F7> :TagbarToggle<CR>
