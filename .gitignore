@@ -6,3 +6,4 @@ vim/sessions
 *.VimballRecord
 *.netrwhist
 vim/vim/bundle/**
+.DS_Store
