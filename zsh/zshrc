@@ -19,8 +19,7 @@ fpath=(~/.zsh/completion $fpath)
 
 ZSH_THEME="kphoen"
 
-plugins=(git fabric bower celery docker pip python redis-cli scala vagrant
-         virtualenvwrapper)
+plugins=(git fabric docker pip python vagrant brew)
 
 source $ZSH/oh-my-zsh.sh
 
