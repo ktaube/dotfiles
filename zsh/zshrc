@@ -1,21 +1,13 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
-export DEVELOPMENT_ROOT=$HOME/Development
-
 if { [ -n "$TMUX" ]; } then
     tmux source-file ~/.tmux.conf > /dev/null
 fi
 
-
 # COMPLETION SETTINGS
 # add custom completion scripts
 fpath=(~/.zsh/completion $fpath)
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 
 ZSH_THEME="kphoen"
 
@@ -36,14 +28,6 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if hash xclip 2>/dev/null; then
-    alias xclip="xclip -selection c"
-fi
-
-if [ -f "$HOME/Tools/scripts/fabfile.py" ]; then
-    alias ngauto="nocorrect fab -f $HOME/Tools/scripts/fabfile.py"
-fi
-
 alias tmuxa='tmux attach-session -t'
 alias tmuxn='tmux new-session -s'
 alias tmuxl='tmux list-sessions'
@@ -54,6 +38,8 @@ export PYTHONSTARTUP=~/.pythonstartup.py
 export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
+
+export DEVELOPMENT_ROOT=$HOME/Development
 
 if [ $VIRTUAL_ENV ]; then
     . "$VIRTUAL_ENV/bin/activate"
@@ -66,7 +52,11 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
+export PATH=$PATH:$DEVELOPMENT_ROOT/tools/google-cloud-sdk/bin
+export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin/kubernetes/platforms/darwin/amd64
 
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/ktaube/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+source $DEVELOPMENT_ROOT/tools/google-cloud-sdk/completion.zsh.inc

@@ -42,10 +42,3 @@ install-tmux:
 install-zsh:
 	mv ~/.zshrc /tmp/.zshrc_bak || true
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
-
-install-ubuntu:
-	sudo apt-get install -y vim git-core zsh tmux xclip tree ack-grep
-	sudo pip install git+ssh://git@github.com:kennethreitz/legit.git
-
-download-gnome-solarized:
-	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git ~/.gnome_solarized
