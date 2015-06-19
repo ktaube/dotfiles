@@ -18,7 +18,6 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
 Plugin 'elzr/vim-json'
 Plugin 'groenewege/vim-less'
 Plugin 'plasticboy/vim-markdown'
@@ -82,9 +81,6 @@ let g:pymode_folding = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-
 " vim-ctrlp
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 100
@@ -111,7 +107,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " Set path where to look for custom snippets
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
-let g:UltiSnipsSnippetDirectories = ['ultisnips', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 
 " Tagbar
 nmap <F7> :TagbarToggle<CR>
