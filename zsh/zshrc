@@ -32,6 +32,10 @@ alias tmuxa='tmux attach-session -t'
 alias tmuxn='tmux new-session -s'
 alias tmuxl='tmux list-sessions'
 
+# set locale
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
 # Python
 export PYTHONSTARTUP=~/.pythonstartup.py
 
