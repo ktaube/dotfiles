@@ -50,6 +50,7 @@ call vundle#end()
 filetype plugin indent on
 
 set wildignore+=*/Godeps/*
+set wildignore+=*.pyc
 
 " ================ Plugin Settings ===============
 
@@ -84,6 +85,7 @@ let g:pymode_rope = 0
 " vim-ctrlp
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 100
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor)|(\.(swp|ico|git|svn))$'
 
 " vim-gitgutter
 " disable plugins keymaps
