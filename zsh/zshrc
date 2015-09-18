@@ -11,7 +11,7 @@ fpath=(~/.zsh/completion $fpath)
 
 ZSH_THEME="kphoen"
 
-plugins=(git fabric docker pip python vagrant brew aws)
+plugins=(git fabric docker pip python vagrant brew aws virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,7 +20,9 @@ export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/s
 
 TERM=screen-256color
 
-alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.865/bin/vim'
+
+alias sl='ls'
 
 # Source virtualenvwrapper
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
@@ -56,11 +58,3 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
-export PATH=$PATH:$DEVELOPMENT_ROOT/tools/google-cloud-sdk/bin
-export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin/kubernetes/platforms/darwin/amd64
-
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/ktaube/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-source $DEVELOPMENT_ROOT/tools/google-cloud-sdk/completion.zsh.inc
