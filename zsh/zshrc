@@ -1,6 +1,18 @@
+# set locale
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+export GIT_EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
+
+# Customize to your needs...
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
+# if tmux session active source custom conf file
 if { [ -n "$TMUX" ]; } then
     tmux source-file ~/.tmux.conf > /dev/null
 fi
@@ -11,16 +23,13 @@ fpath=(~/.zsh/completion $fpath)
 
 ZSH_THEME="kphoen"
 
-plugins=(git fabric docker pip python vagrant brew aws virtualenvwrapper)
+plugins=(git fabric docker python pip brew)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-
 TERM=screen-256color
 
-alias vim='/usr/local/Cellar/vim/7.4.865/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.884/bin/vim'
 
 alias sl='ls'
 
@@ -30,31 +39,23 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-alias tmuxa='tmux attach-session -t'
-alias tmuxn='tmux new-session -s'
-alias tmuxl='tmux list-sessions'
-
-# set locale
-export LC_ALL=en_US.UTF-8  
-export LANG=en_US.UTF-8
-
-# Python
-export PYTHONSTARTUP=~/.pythonstartup.py
-
-export GIT_EDITOR=vim
-export VISUAL=vim
-export EDITOR=vim
-
-export DEVELOPMENT_ROOT=$HOME/Development
-
+# if we have inherited virtualenv from parent session activate it
 if [ $VIRTUAL_ENV ]; then
     . "$VIRTUAL_ENV/bin/activate"
 fi
 
+alias ta='tmux attach-session -t'
+alias tn='tmux new-session -s'
+alias tl='tmux list-sessions'
+
+# Python
+export PYTHONSTARTUP=~/.pythonstartup.py
+
+export DEVELOPMENT_ROOT=$HOME/Development
+export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
+
+# setup go
 export GOROOT=/usr/local/go
 export GOPATH=$DEVELOPMENT_ROOT/workspace/gopath
-
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
-
-export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
