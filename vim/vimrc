@@ -44,6 +44,7 @@ Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'mattn/emmet-vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mxw/vim-jsx'
 
 " end of Plugins
 call vundle#end()
@@ -81,11 +82,12 @@ let g:pymode_breakpoint = 0
 let g:pymode_folding = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
+let g:pymode_lint_ignore = "E501,W"
 
 " vim-ctrlp
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 100
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor|CMakeFiles|CMakeCache.txt)|(\.(swp|ico|git|svn|cmake))$'
 
 " vim-gitgutter
 " disable plugins keymaps
