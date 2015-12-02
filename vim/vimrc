@@ -45,6 +45,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'mattn/emmet-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
+Plugin 'marijnh/tern_for_vim'
 
 " end of Plugins
 call vundle#end()

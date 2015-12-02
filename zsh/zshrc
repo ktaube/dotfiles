@@ -23,13 +23,13 @@ fpath=(~/.zsh/completion $fpath)
 
 ZSH_THEME="kphoen"
 
-plugins=(git fabric docker python pip brew)
+plugins=(zsh-completion git fabric docker python pip brew)
 
 source $ZSH/oh-my-zsh.sh
 
 TERM=screen-256color
 
-alias vim='/usr/local/Cellar/vim/7.4.884/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.903/bin/vim'
 
 alias sl='ls'
 
@@ -59,3 +59,5 @@ export GOROOT=/usr/local/go
 export GOPATH=$DEVELOPMENT_ROOT/workspace/gopath
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
+
+export PATH=$PATH:$DEVELOPMENT_ROOT/workspace/gem/bin
