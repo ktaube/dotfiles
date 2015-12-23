@@ -29,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 
 TERM=screen-256color
 
-alias vim='/usr/local/Cellar/vim/7.4.903/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.944/bin/vim'
 
 alias sl='ls'
 
