@@ -19,18 +19,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
 Plugin 'elzr/vim-json'
-Plugin 'groenewege/vim-less'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'fatih/vim-go'
-Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'nono/vim-handlebars'
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'Shougo/unite.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
@@ -38,10 +32,6 @@ Plugin 'lepture/vim-jinja.git'
 Plugin 'klen/python-mode.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'dag/vim2hs.git'
-Plugin 'honza/dockerfile.vim.git'
-Plugin 'wting/rust.vim'
-Plugin 'cespare/vim-toml'
 Plugin 'mattn/emmet-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
@@ -67,15 +57,6 @@ nnoremap <leader>e :<C-u>Unite -buffer-name=buffer -start-insert buffer<cr>
 nnoremap <leader>f :<C-u>Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>t :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
 
-" Golang
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dd <Plug>(go-doc)
-let g:go_fmt_command = "goimports"
-
 " Python mode
 " disable python-mode autocompleteon so i doesn't conflict with YouCompleteMe
 let g:pymode_rope_completion = 0
@@ -94,17 +75,6 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor|CMakeFiles|C
 " disable plugins keymaps
 let g:gitgutter_map_keys = 0
 map <F5> :GitGutterToggle<cr>
-
-" YouCompleteMe
-" set default conf file
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-" let g:ycm_auto_trigger = 0      "turn off auto trigger
-let g:ycm_autoclose_preview_window_after_insertion = 1
-" set <tab> free so it can be used by Ultisnip
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-k>', '<Up>']
-" Make jedi goto work with YouCompleteMe
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<tab>"

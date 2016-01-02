@@ -6,6 +6,8 @@ export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
+alias vim=/usr/local/Cellar/vim/7.4.1016/bin/vim
+
 # Customize to your needs...
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
