@@ -46,6 +46,7 @@ fi
 
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
+alias tnn='TMUX= tmux new -d -s'
 alias tl='tmux list-sessions'
 
 # Python

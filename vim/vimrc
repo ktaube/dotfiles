@@ -36,6 +36,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'fatih/vim-go'
 
 " end of Plugins
 call vundle#end()
