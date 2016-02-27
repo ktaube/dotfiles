@@ -38,6 +38,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
+Plugin 'Shougo/neocomplete.vim'
 
 " end of Plugins
 call vundle#end()
@@ -67,6 +68,10 @@ let g:pymode_folding = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 let g:pymode_lint_ignore = "E501,W"
+
+" vim-go
+let g:go_fmt_command = "goimports"
+let g:neocomplete#enable_at_startup = 1
 
 " vim-ctrlp
 let g:ctrlp_max_files = 0
