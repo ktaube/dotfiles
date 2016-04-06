@@ -1,0 +1,27 @@
+cask_args appdir: '/Applications'
+
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+
+brew 'zsh'
+brew 'tmux'
+brew 'ack'
+brew 'node'
+brew 'python3'
+brew 'wget'
+brew 'vim'
+brew 'macvim', args: ['override-system-vim']
+brew 'docker'
+
+cask 'atom'
+cask 'firefox'
+cask 'google-chrome'
+cask 'slack'
+cask 'transmission'
+cask 'vlc'
+cask 'spotify'
+cask 'iterm2'
+cask 'pycharm'
+cask 'datagrip'
+cask 'webstorm'
+cask 'virtualbox'

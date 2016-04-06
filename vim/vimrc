@@ -13,31 +13,25 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
-Plugin 'elzr/vim-json'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'Shougo/unite.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja.git'
-Plugin 'klen/python-mode.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'fatih/vim-go'
 Plugin 'Shougo/neocomplete.vim'
 
 " end of Plugins
@@ -55,23 +49,7 @@ execute pathogen#infect()
 " Unite
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
 nnoremap <leader>e :<C-u>Unite -buffer-name=buffer -start-insert buffer<cr>
-nnoremap <leader>f :<C-u>Unite -buffer-name=files -start-insert file<cr>
-nnoremap <leader>t :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
-
-" Python mode
-" disable python-mode autocompleteon so i doesn't conflict with YouCompleteMe
-let g:pymode_rope_completion = 0
-let g:pymode_breakpoint = 0
-let g:pymode_folding = 0
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 0
-let g:pymode_lint_ignore = "E501,W"
-
-" vim-go
-let g:go_fmt_command = "goimports"
-let g:neocomplete#enable_at_startup = 1
 
 " vim-ctrlp
 let g:ctrlp_max_files = 0

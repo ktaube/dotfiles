@@ -3,7 +3,6 @@ install: init \
          install-bash \
          install-git \
          install-tmux \
-         install-python \
          install-vim
 
 init:
@@ -17,11 +16,7 @@ install-vim:
 	mv ~/.vimrc /tmp/.vimrc_bak || true
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
-	vim +BundleInstall +Helptags +qall +GoInstallBinaries
-
-install-python:
-	mv ~/.pythonstartup.py /tmp/.pythonstartup.py_bak || true
-	ln -s `pwd`/python/pythonstartup.py ~/.pythonstartup.py
+	vim +BundleInstall +Helptags
 
 install-bash:
 	mv ~/.profile /tmp/.profile_bak || true
