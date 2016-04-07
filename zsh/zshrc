@@ -52,3 +52,5 @@ export PYTHONSTARTUP=~/.pythonstartup.py
 
 export DEVELOPMENT_ROOT=$HOME/Development
 export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
+
+source /usr/local/share/zsh/site-functions/_aws
