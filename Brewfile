@@ -24,6 +24,7 @@ brew 'apache-spark'
 brew 'pgcli'
 brew 'sbt'
 brew 'scala'
+brew 'cassandra'
 
 cask 'atom'
 cask 'google-chrome'
