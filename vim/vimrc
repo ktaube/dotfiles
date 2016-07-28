@@ -33,6 +33,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'elubow/cql-vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'davidhalter/jedi-vim'
 
 " end of Plugins
 call vundle#end()
