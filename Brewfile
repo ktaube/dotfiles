@@ -15,6 +15,7 @@ brew 'tree'
 brew 'p7zip'
 brew 'wget'
 brew 'libev'
+brew 'jq'
 
 brew 'python3'
 brew 'node'

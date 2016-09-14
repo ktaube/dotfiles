@@ -19,7 +19,6 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
@@ -31,11 +30,10 @@ Plugin 'lepture/vim-jinja.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
-Plugin 'mxw/vim-jsx'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'elubow/cql-vim'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'sheerun/vim-polyglot'
 
 " end of Plugins
 call vundle#end()
@@ -64,6 +62,12 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor|CMakeFiles|C
 let g:gitgutter_map_keys = 0
 map <F5> :GitGutterToggle<cr>
 
+" markdown
+let g:vim_markdown_folding_disabled = 1
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -81,6 +85,13 @@ nmap <F6> :NERDTreeToggle %:p:h<CR>
 " Ack
 " Search string under cursor
 noremap <Leader>a :Ack <cword><cr>
+
+" Emmet
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
 
 " ================ General Settings ==============
 
