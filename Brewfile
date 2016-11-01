@@ -16,6 +16,8 @@ brew 'p7zip'
 brew 'wget'
 brew 'libev'
 brew 'jq'
+# fix for Sierra tmux copy register regression
+brew 'reattach-to-user-namespace'
 
 brew 'python3'
 brew 'node'
