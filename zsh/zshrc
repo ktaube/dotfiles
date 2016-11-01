@@ -56,11 +56,9 @@ export DEVELOPMENT_ROOT=$HOME/Development
 export DEV=$DEVELOPMENT_ROOT
 export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
 
-export SPARK_HOME=/usr/local/Cellar/apache-spark/1.6.2/libexec/
+export SPARK_HOME=/usr/local/Cellar/apache-spark/2.0.0/libexec/
 export PATH=$PATH:$SPARK_HOME/ec2
 
 export PATH=$PATH:$HOME/.npm-packages/bin
 
 source /usr/local/share/zsh/site-functions/_aws
-
-source $DEVELOPMENT_ROOT/tools/dcos/bin/env-setup
