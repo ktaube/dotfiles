@@ -18,10 +18,17 @@ brew 'libev'
 # fix for Sierra tmux copy register regression
 brew 'reattach-to-user-namespace'
 
+# matplotlib dependencies
+brew 'freetype'
+brew 'ttfautohint', args:  ['with-qt']
+
+# install latest java before scala
+cask 'java'
+brew 'scala'
+
 brew 'python3'
 brew 'node'
 brew 'sbt'
-brew 'scala'
 
 brew 'awscli'
 brew 'pgcli'
@@ -37,3 +44,4 @@ cask 'iterm2'
 cask 'flux'
 cask 'imageoptim'
 cask 'appcleaner'
+cask 'aerial'
