@@ -27,6 +27,7 @@ cask 'java'
 brew 'scala'
 
 brew 'python3'
+brew 'pyenv'
 brew 'node'
 brew 'sbt'
 

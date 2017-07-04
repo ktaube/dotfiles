@@ -50,6 +50,7 @@ alias tl='tmux list-sessions'
 alias sl='ls'
 alias gs='git status'
 alias update='brew update && brew upgrade'
+alias dup='docker-compose up -d'
 
 # Python
 export PYTHONSTARTUP=~/.pythonstartup.py
