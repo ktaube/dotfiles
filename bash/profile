@@ -10,39 +10,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-if hash zsh 2>/dev/null; then
-    export SHELL="bin/zsh"
-fi
-
-if hash xclip 2>/dev/null; then
-    alias xclip="xclip -selection c"
-fi
-
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -f "$HOME/.pythonstartup.py" ]; then
-    export PYTHONSTARTUP=$HOME/.pythonstartup.py
-fi
-
-# Restore shell after pdb
-alias sane="stty sane"
-
-if [[ -f "$HOME/.pythonstartup.py" ]]; then
-    export PYTHONSTARTUP=$HOME/.pythonstartup.py
-fi
-
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
