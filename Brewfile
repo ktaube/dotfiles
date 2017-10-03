@@ -25,6 +25,8 @@ brew 'ttfautohint', args:  ['with-qt']
 # install latest java before scala
 cask 'java'
 brew 'scala'
+brew 'golang'
+brew 'dep'
 
 brew 'python3'
 brew 'pyenv'
