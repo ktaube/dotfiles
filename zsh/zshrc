@@ -11,8 +11,8 @@ export EDITOR=vim
 # Customize to your needs...
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-# Add go bin dir to path
-export PATH=$PATH:~/go/bin
+# Add python
+export PATH=$PATH:~/Library/Python/2.7/bin
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
@@ -30,12 +30,6 @@ source $ZSH/oh-my-zsh.sh
 
 TERM=screen-256color
 
-# Source virtualenvwrapper
-if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
 alias tnn='TMUX= tmux new -d -s'
@@ -44,13 +38,19 @@ alias tl='tmux list-sessions'
 alias sl='ls'
 alias gs='git status'
 
-export DEVELOPMENT_ROOT=$HOME/Development
+export DEVELOPMENT_ROOT=$HOME/workspace
 export DEV=$DEVELOPMENT_ROOT
-export PATH=$PATH:$DEVELOPMENT_ROOT/tools/bin
+export PATH=$PATH:$DEVELOPMENT_ROOT/bin
 
 export SPARK_HOME=/usr/local/Cellar/apache-spark/2.2.0/libexec/
 
-export GOPATH=$HOME/go
+export GOPATH=$DEVELOPMENT_ROOT/go
+
+# Add go bin dir to path
+export PATH=$PATH:$GOPATH/bin
+
+# gcloud
+export PATH=$PATH:$DEV/bin/google-cloud-sdk/bin
 
 function code {
     if [[ $# = 0 ]]
