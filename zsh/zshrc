@@ -62,3 +62,13 @@ function code {
         open -a "Visual Studio Code" "$argPath"
     fi
 }
+
+function tmuxssh {
+    if [[ $# = 0 ]]
+    then
+        print "Provide server name"
+    else
+        local arg="$1"
+        ssh $arg -t "tmux -CC attach || tmux -CC"
+    fi
+}
