@@ -72,3 +72,7 @@ function tmuxssh {
         ssh $arg -t "tmux -CC attach || tmux -CC"
     fi
 }
+
+function resethosts {
+    sudo -- sh -c "cat ~/.dotfiles/hosts > /etc/hosts"
+}
