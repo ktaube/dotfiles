@@ -38,19 +38,8 @@ alias tl='tmux list-sessions'
 alias sl='ls'
 alias gs='git status'
 
-export DEVELOPMENT_ROOT=$HOME/workspace
-export DEV=$DEVELOPMENT_ROOT
-export PATH=$PATH:$DEVELOPMENT_ROOT/bin
-
-export SPARK_HOME=/usr/local/Cellar/apache-spark/2.2.0/libexec/
-
-export GOPATH=$DEVELOPMENT_ROOT/go
-
 # Add go bin dir to path
 export PATH=$PATH:$GOPATH/bin
-
-# gcloud
-export PATH=$PATH:$DEV/bin/google-cloud-sdk/bin
 
 function code {
     if [[ $# = 0 ]]
@@ -63,16 +52,12 @@ function code {
     fi
 }
 
-function tmuxssh {
-    if [[ $# = 0 ]]
-    then
-        print "Provide server name"
-    else
-        local arg="$1"
-        ssh $arg -t "tmux -CC attach || tmux -CC"
-    fi
+function sourceNvm {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 
-function resethosts {
-    sudo -- sh -c "cat ~/.dotfiles/hosts > /etc/hosts"
-}
+SCOUT_PATH=/Users/ktaube/code/ScoutRFP
+source $SCOUT_PATH/script/docker/host/aliases.sh
+# Docker Version 17.09.0-ce-mac33 (19543)
