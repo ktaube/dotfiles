@@ -61,3 +61,5 @@ function sourceNvm {
 SCOUT_PATH=/Users/ktaube/code/ScoutRFP
 source $SCOUT_PATH/script/docker/host/aliases.sh
 # Docker Version 17.09.0-ce-mac33 (19543)
+
+NODE_OPTIONS=--max_old_space_size=2048

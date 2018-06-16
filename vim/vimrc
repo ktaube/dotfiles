@@ -25,6 +25,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'sheerun/vim-polyglot'
 
+
 " end of Plugins
 call vundle#end()
 filetype plugin indent on
@@ -119,7 +120,7 @@ filetype indent on
 
 " Colorscheme
 syntax enable                   "turn on syntax highlighting
-set background=light            "set background
+set background=dark             "set background
 set t_Co=256                    "terminal colors
 colorscheme solarized           "set colorscheme
 

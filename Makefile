@@ -36,3 +36,5 @@ install-tmux:
 install-zsh:
 	mv ~/.zshrc /tmp/.zshrc_bak || true
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
+
+.PHONY: init intall-vim install-bash install-git install-tmux install-zsh
