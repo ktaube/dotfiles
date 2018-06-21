@@ -28,6 +28,9 @@ plugins=(zsh-completion git)
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT='[%~$(git_prompt_info)]
+%# '
+
 TERM=screen-256color
 
 alias ta='tmux attach-session -t'

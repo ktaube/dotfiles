@@ -2,7 +2,7 @@
 	name = Kristaps Taube
 	email = ktaube@scoutrfp.com
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
     editor = vim
 [push]
     default=current
