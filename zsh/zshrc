@@ -61,7 +61,7 @@ function sourceNvm {
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 
-SCOUT_PATH=/Users/ktaube/code/ScoutRFP
+SCOUT_PATH=~/code/ScoutRFP
 source $SCOUT_PATH/script/docker/host/aliases.sh
 # Docker Version 17.09.0-ce-mac33 (19543)
 

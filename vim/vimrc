@@ -84,6 +84,9 @@ map <Down>  <Nop>
 map <F8> :set mouse=r<cr>
 map <F9> :set mouse=a<cr>
 
+" Remap ESC
+imap jj <ESC>
+
 " Remap column (super) symbol to semicolin.
 nore ; :
 nore , ;
