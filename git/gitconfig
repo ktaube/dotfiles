@@ -1,6 +1,6 @@
 [user]
 	name = Kristaps Taube
-	email = ktaube@scoutrfp.com
+	email = t.kristaps@gmail.com
 [core]
 	excludesfile = ~/.gitignore
     editor = vim
