@@ -13,6 +13,8 @@ brew 'p7zip'
 brew 'wget'
 brew 'libev'
 brew 'mosh'
+brew 'fzf'
+
 # fix for Sierra tmux copy register regression
 brew 'reattach-to-user-namespace'
 
