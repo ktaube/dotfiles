@@ -66,3 +66,6 @@ NODE_OPTIONS=--max_old_space_size=2048
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+SCOUT_ROOT=~/code/ScoutRFP
+[ -f $SCOUT_ROOT/script/docker/host/aliases.sh ] && source $SCOUT_ROOT/script/docker/host/aliases.sh
+
