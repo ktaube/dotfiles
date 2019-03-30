@@ -26,6 +26,8 @@ brew 'yarn'
 
 brew 'awscli'
 
+brew 'elixir'
+
 # cask 'transmission'
 # cask 'vlc'
 # cask 'iterm2'
