@@ -14,6 +14,8 @@ brew 'wget'
 brew 'libev'
 brew 'mosh'
 brew 'fzf'
+brew 'fx'
+brew 'ag'
 
 # fix for Sierra tmux copy register regression
 brew 'reattach-to-user-namespace'
@@ -33,3 +35,4 @@ brew 'elixir'
 # cask 'iterm2'
 # cask 'flux'
 # cask 'appcleaner'
+
