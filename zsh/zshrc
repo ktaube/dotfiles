@@ -61,6 +61,11 @@ function sourceNvm {
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 
+function sourcePy {
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+}
+
 function resetMagnet {
     pmset displaysleepnow; sleep 5; caffeinate -u -t 1
 }
