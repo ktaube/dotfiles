@@ -22,6 +22,7 @@ brew 'reattach-to-user-namespace'
 
 brew 'python3'
 brew 'pyenv'
+brew 'pyenv-virtualenv'
 
 brew 'node'
 brew 'yarn'
