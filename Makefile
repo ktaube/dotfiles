@@ -1,6 +1,7 @@
 install: init \
          install-zsh \
          install-bash \
+         install-hyper \
          install-git \
          install-tmux \
          install-vim
@@ -23,6 +24,10 @@ install-bash:
 	mv ~/.bashrc /tmp/.bashrc_bak || true
 	ln -s `pwd`/bash/bashrc ~/.bashrc
 	ln -s `pwd`/bash/profile ~/.profile
+
+install-hyper:
+	mv ~/.hyper.js /tmp/.hyper_bak.js || true
+	ln -s `pwd`/hyper.js ~/.hyper.js
 
 install-git:
 	mv ~/.gitconfig /tmp/.gitconfig_bak || true
