@@ -53,24 +53,3 @@ alias tmuxa='tmux attach-session -t'
 alias tmuxn='tmux new-session -s'
 alias tmuxl='tmux list-sessions'
 
-# Python
-export PYTHONSTARTUP=~/.pythonstartup.py
-
-if [ x`which ack-grep` != x ]; then
-  alias ack=ack-grep
-fi
-
-if [[ -d "$HOME/.rvm/bin" ]]; then
-    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
-
-# Source virtualenvwrapper
-if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
