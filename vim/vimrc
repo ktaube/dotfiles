@@ -15,14 +15,9 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Shougo/unite.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mattn/emmet-vim'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'sheerun/vim-polyglot'
 
 
@@ -30,18 +25,10 @@ Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 filetype plugin indent on
 
-set wildignore+=*/Godeps/*
-set wildignore+=*.pyc
-
 " ================ Plugin Settings ===============
 
 " Pathogen.
 execute pathogen#infect()
-
-" Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>e :<C-u>Unite -buffer-name=buffer -start-insert buffer<cr>
 
 " vim-ctrlp
 let g:ctrlp_max_files = 0
@@ -52,16 +39,6 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor|CMakeFiles|C
 " disable plugins keymaps
 let g:gitgutter_map_keys = 0
 map <F5> :GitGutterToggle<cr>
-
-" Nerdtree
-nmap <F6> :NERDTreeToggle %:p:h<CR>
-
-" Emmet
-let g:user_emmet_settings = {
-\  'javascript' : {
-\      'extends' : 'jsx',
-\  },
-\}
 
 " ================ General Settings ==============
 
@@ -156,3 +133,4 @@ endif
 
 " Sierra regression
 set clipboard=unnamed
+
