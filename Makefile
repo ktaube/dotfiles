@@ -16,7 +16,6 @@ install-vim:
 	mv ~/.vimrc /tmp/.vimrc_bak || true
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
-	vim +BundleInstall +Helptags
 
 install-bash:
 	mv ~/.profile /tmp/.profile_bak || true

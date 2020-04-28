@@ -2,46 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" ================ Vundle Plugins ================
-
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-sensible'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'sheerun/vim-polyglot'
-
-
-" end of Plugins
-call vundle#end()
-filetype plugin indent on
-
-" ================ Plugin Settings ===============
-
-" Pathogen.
-execute pathogen#infect()
-
-" vim-ctrlp
-let g:ctrlp_max_files = 0
-let g:ctrlp_max_depth = 100
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor|CMakeFiles|CMakeCache.txt)|(\.(swp|ico|git|svn|cmake))$'
-
-" vim-gitgutter
-" disable plugins keymaps
-let g:gitgutter_map_keys = 0
-map <F5> :GitGutterToggle<cr>
-
-" ================ General Settings ==============
-
 " Relode .vimrc.
 map <silent> <F12> :source ~/.vimrc<cr>
 
@@ -57,10 +17,6 @@ map <Right> <Nop>
 map <Up>    <Nop>
 map <Down>  <Nop>
 
-" set mouse gui options
-map <F8> :set mouse=r<cr>
-map <F9> :set mouse=a<cr>
-
 " Remap ESC
 imap jj <ESC>
 
@@ -74,24 +30,16 @@ nore , ;
 :command W w
 :command Q q
 
-iab anf and
-iab adn and
-iab ans and
-iab teh the
-iab thre there
-
 " General config
 set nowrap
-set number                      "Line numbers
-set visualbell                  "No sounds
+set nonumber
+set backspace=2
 set laststatus=2                "display the status line always
 set confirm
 set scrolloff=2                 "auto scroll text
 set modeline                    "enable modline
 set encoding=utf-8              "deflault encouding
 set autowrite                   "prevent asking if you want to save the curbuf
-set lazyredraw                  "don't redraw when don't have to
-set mousemodel=popup            "enable a popup menu on right click in GUI vim
 set sidescrolloff=5             "always at least five lines visible above/below
 set virtualedit=block           "cursr can be positioned where there is no char
 set splitright                  "make the new window appear on the right
@@ -100,9 +48,7 @@ filetype indent on
 
 " Colorscheme
 syntax enable                   "turn on syntax highlighting
-set background=dark             "set background
-set t_Co=256                    "terminal colors
-colorscheme solarized           "set colorscheme
+set background=light            "set background
 
 " Searching
 set ignorecase                  "case insensitive search
@@ -111,10 +57,10 @@ set incsearch                   "move the cursor to the matched string
 set hlsearch                    "highlight search matches
 
 " Indentation
-set tabstop=4                   "set how many columns a tab counts for
+set tabstop=2                   "set how many columns a tab counts for
 set expandtab                   "insert spaces on tab
-set softtabstop=4               "set how many columns vim inserts on tab
-set shiftwidth=4                "how many columns with >> and <<
+set softtabstop=2               "set how many columns vim inserts on tab
+set shiftwidth=2                "how many columns with >> and <<
 
 " Title
 set title                       "automaticly set vim windows title
