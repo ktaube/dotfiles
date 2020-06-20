@@ -8,3 +8,6 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock
 # Increase key refresh rate
 defaults write -g KeyRepeat -int 3
 defaults write -g InitialKeyRepeat -int 10
+
+ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/Drive
+
