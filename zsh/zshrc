@@ -65,3 +65,18 @@ NODE_OPTIONS=--max_old_space_size=2048
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# show elapsed time for each command
+function preexec() {
+ timer=$(($(gdate +%s%0N)/1000000))
+}
+
+function precmd() {
+ if [ $timer ]; then
+now=$(($(gdate +%s%0N)/1000000))
+elapsed=$(($now-$timer))
+export RPROMPT="%F{#134253}${elapsed}ms %{$reset_color%}"
+unset timer
+ fi
+}
+# end
+
