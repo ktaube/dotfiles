@@ -80,3 +80,15 @@ endif
 " Sierra regression
 set clipboard=unnamed
 
+"" START vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'lifepillar/vim-solarized8'
+
+" Initialize plugin system
+call plug#end()
+"" END vim-plug
+
+set termguicolors
+set background=light
+colorscheme solarized8
