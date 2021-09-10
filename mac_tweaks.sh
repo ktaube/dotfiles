@@ -9,5 +9,8 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock
 defaults write -g KeyRepeat -int 3
 defaults write -g InitialKeyRepeat -int 10
 
+# Make finder always show hidden files
+defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder;
+
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/Drive
 
