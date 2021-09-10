@@ -17,6 +17,7 @@ brew 'fzf'
 brew 'fx'
 brew 'ag'
 brew 'neovim'
+brew 'httpie'
 
 # fix for Sierra tmux copy register regression
 brew 'reattach-to-user-namespace'
