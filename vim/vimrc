@@ -2,6 +2,15 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+"" START vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'lifepillar/vim-solarized8'
+
+" Initialize plugin system
+call plug#end()
+"" END vim-plug
+
 " Relode .vimrc.
 map <silent> <F12> :source ~/.vimrc<cr>
 
@@ -47,8 +56,10 @@ set splitbelow                  "show split screens at the bottom of the screen
 filetype indent on
 
 " Colorscheme
-syntax enable                   "turn on syntax highlighting
-set background=light            "set background
+syntax enable
+set termguicolors
+set background=light
+colorscheme solarized8
 
 " Searching
 set ignorecase                  "case insensitive search
@@ -80,15 +91,3 @@ endif
 " Sierra regression
 set clipboard=unnamed
 
-"" START vim-plug
-call plug#begin('~/.vim/plugged')
-
-Plug 'lifepillar/vim-solarized8'
-
-" Initialize plugin system
-call plug#end()
-"" END vim-plug
-
-set termguicolors
-set background=light
-colorscheme solarized8
