@@ -3,7 +3,8 @@ install: init \
          install-bash \
          install-git \
          install-tmux \
-         install-vim
+         install-vim \
+				 install-nvim
 
 init:
 	git submodule init
@@ -16,6 +17,11 @@ install-vim:
 	mv ~/.vimrc /tmp/.vimrc_bak || true
 	ln -s `pwd`/vim/vim ~/.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
+
+install-nvim:
+	mkdir -p ~/.config/nvim
+	mv ~/.config/nvim/init.vim ~/.config/nvim/init_bak || true
+	ln -s `pwd`/nvim/init.vim ~/.config/nvim/init.vim || true
 
 install-bash:
 	mv ~/.profile /tmp/.profile_bak || true

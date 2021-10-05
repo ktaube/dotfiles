@@ -33,8 +33,6 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='[%~$(git_prompt_info)]
 %# '
 
-TERM=xterm-256color
-
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
 alias tnn='TMUX= tmux new -d -s'
@@ -42,6 +40,8 @@ alias tl='tmux list-sessions'
 
 alias sl='ls'
 alias gs='git status'
+
+alias vim='nvim'
 
 # Add go bin dir to path
 export PATH=$PATH:$GOPATH/bin
