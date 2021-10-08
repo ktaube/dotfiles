@@ -4,9 +4,9 @@ SHELL=/bin/zsh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export GIT_EDITOR=vim
-export VISUAL=vim
-export EDITOR=vim
+export GIT_EDITOR=nvim
+export VISUAL=nvim
+export EDITOR=nvim
 
 # Customize to your needs...
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
