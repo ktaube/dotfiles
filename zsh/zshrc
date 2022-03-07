@@ -32,7 +32,8 @@ ZSH_THEME="kphoen"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'  # for dark theme
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180' # for light theme
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completion git)
+# plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completion git)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting git)
 
 source $ZSH/oh-my-zsh.sh
 
