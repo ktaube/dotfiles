@@ -30,6 +30,7 @@ brew 'pyenv-virtualenv'
 brew 'node'
 brew 'yarn'
 
+brew 'terraform'
 brew 'awscli'
 
 # cask 'transmission'
