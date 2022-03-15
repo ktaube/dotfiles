@@ -3,6 +3,7 @@
 *.bak
 vim/.netrwhist
 vim/sessions
+vim/vim/plugged
 *.VimballRecord
 *.netrwhist
 vim/vim/bundle/**

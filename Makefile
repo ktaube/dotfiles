@@ -4,7 +4,7 @@ install: init \
          install-git \
          install-tmux \
          install-vim \
-				 install-nvim
+      	 install-nvim
 
 init:
 	git submodule init
@@ -41,9 +41,9 @@ install-tmux:
 install-zsh:
 	mv ~/.zshrc /tmp/.zshrc_bak || true
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
-	source ~/.zshrc
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ./zsh/oh-my-zsh/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git ./zsh/oh-my-zsh/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-completions ./zsh/oh-my-zsh/plugins/zsh-completions
 
 .PHONY: init intall-vim install-bash install-git install-tmux install-zsh
 

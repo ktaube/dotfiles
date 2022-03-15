@@ -32,7 +32,7 @@ ZSH_THEME="kphoen"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'  # for dark theme
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180' # for light theme
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completion git)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,6 +48,8 @@ alias sl='ls'
 alias gs='git status'
 
 alias vim='nvim'
+
+alias logibomb="kill -9 $(ps ax | grep /Applications/Logi\ Options.app/Contents/Support/LogiMgrDaemon.app/Contents/MacOS/LogiMgrDaemon\ --launchd | head -n 1 | awk '{ print $1 }')"
 
 # Add go bin dir to path
 export PATH=$PATH:$GOPATH/bin
