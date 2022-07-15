@@ -38,4 +38,6 @@ brew 'awscli'
 # cask 'iterm2'
 # cask 'flux'
 # cask 'appcleaner'
+# cask 'appcleaner'
+# cask 'aws-vpn-client'
 
