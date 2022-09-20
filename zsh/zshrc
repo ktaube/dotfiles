@@ -49,7 +49,7 @@ alias gs='git status'
 
 alias vim='nvim'
 
-alias logibomb="kill -9 $(ps ax | grep /Applications/Logi\ Options.app/Contents/Support/LogiMgrDaemon.app/Contents/MacOS/LogiMgrDaemon\ --launchd | head -n 1 | awk '{ print $1 }')"
+alias logibomb="killall LogiMgrDaemon"
 
 # Add go bin dir to path
 export PATH=$PATH:$GOPATH/bin
