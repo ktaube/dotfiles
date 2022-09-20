@@ -8,7 +8,7 @@
         "revision": "95e1114e202c57887b761e268f43f0077f593f0f"
       },
       "homebrew/cask": {
-        "revision": "ae45e40874d14cebcec1892e77f2d4607562c2e5"
+        "revision": "bd77d02a4406f005ed425f554da6a709bc322ff0"
       }
     },
     "brew": {
@@ -910,6 +910,26 @@
               "url": "https://ghcr.io/v2/homebrew/core/terraform/blobs/sha256:346db9dd674f6d4ebe783b5bb32364834ae2ebd991e523d745ed3eaf56fde1ac",
               "sha256": "346db9dd674f6d4ebe783b5bb32364834ae2ebd991e523d745ed3eaf56fde1ac"
             }
+          }
+        }
+      }
+    },
+    "cask": {
+      "rectangle": {
+        "version": "0.59,65",
+        "options": {
+          "full_name": "rectangle",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "shottr": {
+        "version": "1.6.0",
+        "options": {
+          "full_name": "shottr",
+          "args": {
+            "appdir": "/Applications"
           }
         }
       }

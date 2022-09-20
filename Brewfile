@@ -34,6 +34,7 @@ brew 'terraform'
 brew 'awscli'
 
 # cask 'rectangle'
+# cask 'shottr'
 # cask 'transmission'
 # cask 'vlc'
 # cask 'iterm2'
