@@ -20,8 +20,8 @@ install-vim:
 
 install-nvim:
 	mkdir -p ~/.config/nvim
-	mv ~/.config/nvim/init.vim ~/.config/nvim/init_bak || true
-	ln -s `pwd`/nvim/init.vim ~/.config/nvim/init.vim || true
+	mv ~/.config/nvim/init.lua ~/.config/nvim/init_bak.lua || true
+	ln -s `pwd`/nvim/init.lua ~/.config/nvim/init.lua || true
 
 install-bash:
 	mv ~/.profile /tmp/.profile_bak || true
