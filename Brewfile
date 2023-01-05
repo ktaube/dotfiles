@@ -32,6 +32,7 @@ brew 'yarn'
 
 brew 'terraform'
 brew 'awscli'
+brew 'stripe/stripe-cli/stripe'
 
 # cask 'rectangle'
 # cask 'shottr'
