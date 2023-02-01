@@ -17,6 +17,8 @@ brew 'fzf'
 brew 'fx'
 brew 'ag'
 brew 'neovim'
+brew 'ripgrep'
+brew 'fd'
 brew 'httpie'
 brew 'coreutils'
 
