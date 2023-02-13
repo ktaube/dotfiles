@@ -1,7 +1,26 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
-/* Hide "Tree Style Tabs" sidebar header */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-  display: none;
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+  visibility: collapse !important;
 }
 
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar .titlebar-spacer {
+  border-inline-end: none;
+}
+
+#tabbrowser-tabs {
+  visibility: collapse !important;
+  min-height: 0 !important;
+}
+
+tab{
+  display:none!important;
+}
+
+#alltabs-button {
+  margin-left: auto;
+}
