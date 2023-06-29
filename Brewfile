@@ -44,4 +44,5 @@ brew 'stripe/stripe-cli/stripe'
 # cask 'flux'
 # cask 'appcleaner'
 # cask 'aws-vpn-client'
+# cask 'raycast'
 
