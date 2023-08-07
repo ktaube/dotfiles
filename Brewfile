@@ -1,7 +1,7 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/cask'
-tap 'homebrew/bundle'
+# tap 'homebrew/cask'
+# tap 'homebrew/bundle'
 
 brew 'vim'
 brew 'git'
