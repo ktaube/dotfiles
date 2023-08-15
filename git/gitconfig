@@ -1,6 +1,7 @@
 [user]
 	name = Kristaps Taube
 	email = t.kristaps@gmail.com
+	signingkey = /Users/kt/.ssh/id_rsa.pub
 [core]
 	excludesfile = ~/.gitignore
   editor = nvim
@@ -35,3 +36,5 @@
 [pull]
 	rebase = false
 
+[gpg]
+	format = ssh
