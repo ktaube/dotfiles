@@ -52,7 +52,7 @@ alias vim='nvim'
 alias logibomb="killall LogiMgrDaemon"
 
 # Add go bin dir to path
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$HOME/.dotfiles/scripts
 
 function sourceNvm {
     export NVM_DIR="$HOME/.nvm"
@@ -74,4 +74,3 @@ NODE_OPTIONS=--max_old_space_size=2048
 
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
