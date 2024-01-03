@@ -27,8 +27,6 @@ brew 'llm'
 brew 'reattach-to-user-namespace'
 
 brew 'python3'
-brew 'pyenv'
-brew 'pyenv-virtualenv'
 
 brew 'node'
 brew 'yarn'
@@ -38,7 +36,6 @@ brew 'awscli'
 brew 'stripe/stripe-cli/stripe'
 
 # cask 'rectangle'
-# cask 'shottr'
 # cask 'transmission'
 # cask 'vlc'
 # cask 'iterm2'

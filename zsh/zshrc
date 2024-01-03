@@ -49,8 +49,6 @@ alias gs='git status'
 
 alias vim='nvim'
 
-alias logibomb="killall LogiMgrDaemon"
-
 # Add go bin dir to path
 export PATH=$PATH:$GOPATH/bin:$HOME/.dotfiles/scripts
 
@@ -60,17 +58,6 @@ function sourceNvm {
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 sourceNvm
-
-function sourcePy {
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-}
-
-function resetMagnet {
-    pmset displaysleepnow; sleep 5; caffeinate -u -t 1
-}
-
-NODE_OPTIONS=--max_old_space_size=2048
 
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
