@@ -21,7 +21,6 @@ brew 'ripgrep'
 brew 'fd'
 brew 'httpie'
 brew 'coreutils'
-brew 'llm'
 
 # fix for Sierra tmux copy register regression
 brew 'reattach-to-user-namespace'
