@@ -23,9 +23,13 @@ export PATH=$PATH:~/workspace/bin
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
+update_tmux_path() {
+    printf "\033]7;file://%s:%s\033\\" "localhost" "$PWD"
+}
 # if tmux session active source custom conf file
 if { [ -n "$TMUX" ]; } then
     tmux source-file ~/.tmux.conf > /dev/null
+    precmd_functions+=(update_tmux_path)
 fi
 
 ZSH_THEME="kphoen"

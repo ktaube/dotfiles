@@ -29,6 +29,7 @@ brew 'python3'
 
 brew 'node'
 brew 'yarn'
+brew 'oven-sh/bun/bun'
 
 brew 'terraform'
 brew 'awscli'

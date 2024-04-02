@@ -22,7 +22,7 @@
 "   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "
 "   " On-demand loading
-"   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"   Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 "   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 "
 "   " Using a non-default branch
@@ -242,6 +242,8 @@ function! plug#begin(...)
     let home = s:path(s:plug_fnamemodify(s:plug_expand(a:1), ':p'))
   elseif exists('g:plug_home')
     let home = s:path(g:plug_home)
+  elseif has('nvim')
+    let home = stdpath('data') . '/plugged'
   elseif !empty(&rtp)
     let home = s:path(split(&rtp, ',')[0]) . '/plugged'
   else
@@ -350,7 +352,7 @@ function! plug#end()
   endif
   let lod = { 'ft': {}, 'map': {}, 'cmd': {} }
 
-  if exists('g:did_load_filetypes')
+  if get(g:, 'did_load_filetypes', 0)
     filetype off
   endif
   for name in g:plugs_order
@@ -389,6 +391,9 @@ function! plug#end()
       if !empty(types)
         augroup filetypedetect
         call s:source(s:rtp(plug), 'ftdetect/**/*.vim', 'after/ftdetect/**/*.vim')
+        if has('nvim-0.5.0')
+          call s:source(s:rtp(plug), 'ftdetect/**/*.lua', 'after/ftdetect/**/*.lua')
+        endif
         augroup END
       endif
       for type in types
@@ -405,7 +410,7 @@ function! plug#end()
 
   for [map, names] in items(lod.map)
     for [mode, map_prefix, key_prefix] in
-          \ [['i', '<C-O>', ''], ['n', '', ''], ['v', '', 'gv'], ['o', '', '']]
+          \ [['i', '<C-\><C-O>', ''], ['n', '', ''], ['v', '', 'gv'], ['o', '', '']]
       execute printf(
       \ '%snoremap <silent> %s %s:<C-U>call <SID>lod_map(%s, %s, %s, "%s")<CR>',
       \ mode, map, map_prefix, string(map), string(names), mode != 'i', key_prefix)
@@ -436,6 +441,9 @@ endfunction
 
 function! s:load_plugin(spec)
   call s:source(s:rtp(a:spec), 'plugin/**/*.vim', 'after/plugin/**/*.vim')
+  if has('nvim-0.5.0')
+    call s:source(s:rtp(a:spec), 'plugin/**/*.lua', 'after/plugin/**/*.lua')
+  endif
 endfunction
 
 function! s:reload_plugins()
@@ -653,6 +661,9 @@ function! s:lod(names, types, ...)
     let rtp = s:rtp(g:plugs[name])
     for dir in a:types
       call s:source(rtp, dir.'/**/*.vim')
+      if has('nvim-0.5.0')  " see neovim#14686
+        call s:source(rtp, dir.'/**/*.lua')
+      endif
     endfor
     if a:0
       if !s:source(rtp, a:1) && !empty(s:glob(rtp, a:2))
@@ -1029,6 +1040,11 @@ function! s:is_updated(dir)
 endfunction
 
 function! s:do(pull, force, todo)
+  if has('nvim')
+    " Reset &rtp to invalidate Neovim cache of loaded Lua modules
+    " See https://github.com/junegunn/vim-plug/pull/1157#issuecomment-1809226110
+    let &rtp = &rtp
+  endif
   for [name, spec] in items(a:todo)
     if !isdirectory(spec.dir)
       continue
@@ -1208,7 +1224,8 @@ function! s:update_impl(pull, force, args) abort
   normal! 2G
   silent! redraw
 
-  let s:clone_opt = []
+  " Set remote name, overriding a possible user git config's clone.defaultRemoteName
+  let s:clone_opt = ['--origin', 'origin']
   if get(g:, 'plug_shallow', 1)
     call extend(s:clone_opt, ['--depth', '1'])
     if s:git_version_requirement(1, 7, 10)
@@ -2343,18 +2360,21 @@ function! s:git_validate(spec, check_branch)
               \ current_branch, origin_branch)
       endif
       if empty(err)
-        let [ahead, behind] = split(s:lastline(s:system([
-        \ 'git', 'rev-list', '--count', '--left-right',
-        \ printf('HEAD...origin/%s', origin_branch)
-        \ ], a:spec.dir)), '\t')
-        if !v:shell_error && ahead
-          if behind
+        let ahead_behind = split(s:lastline(s:system([
+          \ 'git', 'rev-list', '--count', '--left-right',
+          \ printf('HEAD...origin/%s', origin_branch)
+          \ ], a:spec.dir)), '\t')
+        if v:shell_error || len(ahead_behind) != 2
+          let err = "Failed to compare with the origin. The default branch might have changed.\nPlugClean required."
+        else
+          let [ahead, behind] = ahead_behind
+          if ahead && behind
             " Only mention PlugClean if diverged, otherwise it's likely to be
             " pushable (and probably not that messed up).
             let err = printf(
                   \ "Diverged from origin/%s (%d commit(s) ahead and %d commit(s) behind!\n"
                   \ .'Backup local changes and run PlugClean and PlugUpdate to reinstall it.', origin_branch, ahead, behind)
-          else
+          elseif ahead
             let err = printf("Ahead of origin/%s by %d commit(s).\n"
                   \ .'Cannot update until local changes are pushed.',
                   \ origin_branch, ahead)
@@ -2618,26 +2638,34 @@ function! s:preview_commit()
 
   let sha = matchstr(getline('.'), '^  \X*\zs[0-9a-f]\{7,9}')
   if empty(sha)
-    return
+    let name = matchstr(getline('.'), '^- \zs[^:]*\ze:$')
+    if empty(name)
+      return
+    endif
+    let title = 'HEAD@{1}..'
+    let command = 'git diff --no-color HEAD@{1}'
+  else
+    let title = sha
+    let command = 'git show --no-color --pretty=medium '.sha
+    let name = s:find_name(line('.'))
   endif
 
-  let name = s:find_name(line('.'))
   if empty(name) || !has_key(g:plugs, name) || !isdirectory(g:plugs[name].dir)
     return
   endif
 
   if exists('g:plug_pwindow') && !s:is_preview_window_open()
     execute g:plug_pwindow
-    execute 'e' sha
+    execute 'e' title
   else
-    execute 'pedit' sha
+    execute 'pedit' title
     wincmd P
   endif
-  setlocal previewwindow filetype=git buftype=nofile nobuflisted modifiable
+  setlocal previewwindow filetype=git buftype=nofile bufhidden=wipe nobuflisted modifiable
   let batchfile = ''
   try
     let [sh, shellcmdflag, shrd] = s:chsh(1)
-    let cmd = 'cd '.plug#shellescape(g:plugs[name].dir).' && git show --no-color --pretty=medium '.sha
+    let cmd = 'cd '.plug#shellescape(g:plugs[name].dir).' && '.command
     if s:is_win
       let [batchfile, cmd] = s:batchfile(cmd)
     endif
@@ -2763,9 +2791,9 @@ function! s:snapshot(force, ...) abort
   1
   let anchor = line('$') - 3
   let names = sort(keys(filter(copy(g:plugs),
-        \'has_key(v:val, "uri") && !has_key(v:val, "commit") && isdirectory(v:val.dir)')))
+        \'has_key(v:val, "uri") && isdirectory(v:val.dir)')))
   for name in reverse(names)
-    let sha = s:git_revision(g:plugs[name].dir)
+    let sha = has_key(g:plugs[name], 'commit') ? g:plugs[name].commit : s:git_revision(g:plugs[name].dir)
     if !empty(sha)
       call append(anchor, printf("silent! let g:plugs['%s'].commit = '%s'", name, sha))
       redraw
