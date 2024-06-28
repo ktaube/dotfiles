@@ -66,3 +66,6 @@ sourceNvm
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PNPM_HOME="/Users/kt/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
