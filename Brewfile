@@ -34,6 +34,7 @@ brew 'oven-sh/bun/bun'
 brew 'terraform'
 brew 'awscli'
 brew 'stripe/stripe-cli/stripe'
+brew 'tursodatabase/tap/turso'
 
 # cask 'rectangle'
 # cask 'transmission'
