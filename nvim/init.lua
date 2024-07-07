@@ -5,6 +5,8 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_bootstrap = true
   vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
   vim.cmd [[packadd packer.nvim]]
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
 end
 
 require('packer').startup(function(use)
@@ -57,10 +59,10 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
-  -- Tabs
+  -- Tabs and file browsers
   use 'nvim-tree/nvim-web-devicons'
-  use 'lewis6991/gitsigns.nvim'
   use 'romgrk/barbar.nvim'
+  use 'nvim-tree/nvim-tree.lua'
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -386,8 +388,10 @@ mason_lspconfig.setup_handlers {
 -- Turn on lsp status information
 require('fidget').setup()
 
+-- Tabs and file browser
 vim.g.barbar_auto_setup = false
-require('barbar').setup({})
+require('barbar').setup()
+require("nvim-tree").setup()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
