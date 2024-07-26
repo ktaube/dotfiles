@@ -392,6 +392,14 @@ require('fidget').setup()
 vim.g.barbar_auto_setup = false
 require('barbar').setup()
 require("nvim-tree").setup()
+-- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>e', function()
+  local tree_api = require('nvim-tree.api')
+  tree_api.tree.toggle({
+    find_file = true,
+    focus = true
+  })
+end, { noremap = true, silent = true })
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
