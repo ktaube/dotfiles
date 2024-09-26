@@ -12,14 +12,6 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=999999999
 export SAVEHIST=$HISTSIZE
 
-# Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-# Add python
-export PATH=$PATH:~/Library/Python/3.11/bin
-
-export PATH=$PATH:~/workspace/bin
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
@@ -53,8 +45,13 @@ alias gs='git status'
 
 alias vim='nvim'
 
-# Add go bin dir to path
-export PATH=$PATH:$GOPATH/bin:$HOME/.dotfiles/scripts
+# fzf keybindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# PATH config
+export PATH=$PATH:$HOME/.dotfiles/scripts
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/Library/Python/3.12/bin
 
 function sourceNvm {
     export NVM_DIR="$HOME/.nvm"
@@ -63,9 +60,9 @@ function sourceNvm {
 }
 sourceNvm
 
-# fzf keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export PNPM_HOME="/Users/kt/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$(go env GOPATH)/bin
+
 
