@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 # tap 'homebrew/cask'
 # tap 'homebrew/bundle'
+tap 'oven-sh/bun'
 
 brew 'vim'
 brew 'git'
@@ -12,7 +13,6 @@ brew 'tree'
 brew 'p7zip'
 brew 'wget'
 brew 'libev'
-brew 'mosh'
 brew 'fzf'
 brew 'fx'
 brew 'ag'
@@ -21,21 +21,20 @@ brew 'ripgrep'
 brew 'fd'
 brew 'httpie'
 brew 'coreutils'
-brew 'uv'
 
 # fix for Sierra tmux copy register regression
 brew 'reattach-to-user-namespace'
 
+brew 'uv'
 brew 'python3'
 
 brew 'node'
 brew 'yarn'
-brew 'oven-sh/bun/bun'
+brew 'bun'
 
-brew 'terraform'
 brew 'awscli'
+brew 'terraform'
 brew 'stripe/stripe-cli/stripe'
-brew 'tursodatabase/tap/turso'
 
 # brew '1password-cli'
 
