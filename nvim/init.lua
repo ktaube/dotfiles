@@ -391,7 +391,11 @@ require('fidget').setup()
 -- Tabs and file browser
 vim.g.barbar_auto_setup = false
 require('barbar').setup()
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  view = {
+    side = 'right'
+  }
+})
 -- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>e', function()
   local tree_api = require('nvim-tree.api')
