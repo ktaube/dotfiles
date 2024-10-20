@@ -31,6 +31,7 @@ brew 'python3'
 brew 'node'
 brew 'yarn'
 brew 'bun'
+brew 'deno'
 
 brew 'awscli'
 brew 'terraform'
