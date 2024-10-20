@@ -15,6 +15,8 @@ require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
 
+  use 'ray-x/go.nvim'
+
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
@@ -105,6 +107,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
+
+vim.o.tabstop = 2     -- Number of visual spaces per TAB
+vim.o.shiftwidth = 2  -- Number of spaces to use for each step of (auto)indent
 
 -- Set highlight on search
 vim.o.hlsearch = true
