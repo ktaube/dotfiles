@@ -26,58 +26,7 @@ vim.o.background = "dark"
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require('lazy').setup({
-  'ray-x/go.nvim',
-
-  { -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-    },
-  },
-
-  -- Useful status updates for LSP
-  {
-    'j-hui/fidget.nvim',
-    tag = "v1.4.1"
-  },
-
-  { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  },
-
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
-    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
-  },
-
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  'lewis6991/gitsigns.nvim',
-
-  'nvim-lualine/lualine.nvim', -- Fancier statusline
-  'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
-  'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
-  -- Tabs and file browsers
-  'nvim-tree/nvim-web-devicons',
-  'romgrk/barbar.nvim',
-  'nvim-tree/nvim-tree.lua',
-
-  -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 },
-})
+require('lazy').setup('plugins')
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -264,7 +213,6 @@ require('nvim-treesitter.configs').setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- LSP settings.
@@ -341,23 +289,6 @@ require('mason').setup()
 
 -- Turn on lsp status information
 require('fidget').setup()
-
--- Tabs and file browser
-vim.g.barbar_auto_setup = false
-require('barbar').setup()
-require("nvim-tree").setup({
-  view = {
-    side = 'right'
-  }
-})
--- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>e', function()
-  local tree_api = require('nvim-tree.api')
-  tree_api.tree.toggle({
-    find_file = true,
-    focus = true
-  })
-end, { noremap = true, silent = true })
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
