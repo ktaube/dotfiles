@@ -1,13 +1,35 @@
 return {
-  { -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
+  {
+    "williamboman/mason.nvim",
     dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "williamboman/mason-lspconfig.nvim",
     },
-  },
+    config = function()
+      local mason = require("mason")
+      local mason_tool_installer = require("mason-tool-installer")
 
+      -- enable mason and configure icons
+      mason.setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
+      })
+
+      mason_tool_installer.setup({
+        ensure_installed = {
+          "gopls",
+        },
+      })
+    end,
+    build = function()
+      pcall(vim.cmd, "MasonUpdate")
+    end,
+  },
   -- Useful status updates for LSP
   {
     'j-hui/fidget.nvim',
@@ -35,7 +57,21 @@ return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 
+    'nvim-telescope/telescope.nvim', 
+    branch = '0.1.x', 
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = {
+      defaults = {
+        mappings = {
+          i = {
+            ['<C-u>'] = false,
+            ['<C-d>'] = false,
+          },
+        },
+      },
+    },
+  },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 },
