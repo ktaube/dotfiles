@@ -48,17 +48,35 @@ alias vim='nvim'
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source_nvm() {
+  # Lazy load nvm only when a node-related command is run
+  load_nvm() {
+    unset -f load_nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  }
+
+  # Wrap node commands to lazy-load nvm
+  node() { load_nvm; command node "$@"; }
+  npm() { load_nvm; command npm "$@"; }
+  npx() { load_nvm; command npx "$@"; }
+  nvm() { load_nvm; command nvm "$@"; }
+
+  # Load nvm automatically if we enter a directory with an .nvmrc file
+  autoload -U add-zsh-hook
+  load_nvm_if_required() {
+    if [ -f .nvmrc ]; then
+      load_nvm
+    fi
+  }
+  add-zsh-hook chpwd load_nvm_if_required
+}
+source_nvm
+
 # PATH config
 export PATH=$PATH:$HOME/.dotfiles/scripts
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/Library/Python/3.12/bin
-
-function sourceNvm {
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-}
-sourceNvm
 
 export PNPM_HOME="/Users/kt/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
