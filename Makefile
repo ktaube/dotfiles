@@ -12,12 +12,6 @@ init:
 	git submodule foreach git submodule init
 	git submodule foreach git submodule update
 
-install-vim:
-	mv ~/.vim /tmp/.vim_bak || true
-	mv ~/.vimrc /tmp/.vimrc_bak || true
-	ln -s `pwd`/vim/vim ~/.vim
-	ln -s `pwd`/vim/vimrc ~/.vimrc
-
 install-nvim:
 	mkdir -p ~/.config/nvim
 	mv ~/.config/nvim/init.lua ~/.config/nvim/init_bak.lua || true
