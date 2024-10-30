@@ -20,7 +20,16 @@ return {
   },
 
   -- Git related plugins
-  'nvim-lualine/lualine.nvim', -- Fancier statusline
+  {
+    'nvim-lualine/lualine.nvim', -- Fancier statusline
+    opts = {
+      options = {
+        icons_enabled = true,
+        component_separators = '|',
+        section_separators = '',
+      },
+    },
+  },
   'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
