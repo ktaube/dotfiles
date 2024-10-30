@@ -1,5 +1,11 @@
 return {
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
     "williamboman/mason.nvim",
     dependencies = {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -46,6 +52,7 @@ return {
     'nvim-lualine/lualine.nvim', -- Fancier statusline
     opts = {
       options = {
+        theme = 'tokyonight',
         icons_enabled = true,
         component_separators = '|',
         section_separators = '',

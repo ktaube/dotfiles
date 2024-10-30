@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- require("config.lazy")
 
-vim.o.background = "dark"
 --
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
@@ -27,6 +26,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('lazy').setup('plugins')
+
+vim.cmd[[colorscheme tokyonight]]
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
