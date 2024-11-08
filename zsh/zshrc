@@ -48,17 +48,19 @@ alias vim='nvim'
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# load nvm only when calling relevant commands
 load_nvm() {
-  # unset -f load_nvm
+  unset -f load_nvm
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  export NVM_LOADED=true
 }
 source_nvm() {
-
-  node() { load_nvm; command node "$@"; }
-  npm() { load_nvm; command npm "$@"; }
-  npx() { load_nvm; command npx "$@"; }
-  nvm() { load_nvm; command nvm "$@"; }
+  node() { [ -z "$NVM_LOADED" ] && load_nvm; command node "$@"; }
+  npm() { [ -z "$NVM_LOADED" ] && load_nvm; command npm "$@"; }
+  npx() { [ -z "$NVM_LOADED" ] && load_nvm; command npx "$@"; }
+  nvm() { [ -z "$NVM_LOADED" ] && load_nvm; command nvm "$@"; }
+  pnpm() { [ -z "$NVM_LOADED" ] && load_nvm; command pnpm "$@"; }
 
   autoload -U add-zsh-hook
   load_nvm_if_required() {
