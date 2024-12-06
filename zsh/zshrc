@@ -70,7 +70,6 @@ source_nvm() {
   }
   add-zsh-hook chpwd load_nvm_if_required
 }
-source_nvm
 
 # PATH config
 export PATH=$PATH:$HOME/.dotfiles/scripts
