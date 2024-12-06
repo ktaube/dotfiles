@@ -32,6 +32,7 @@ brew 'node'
 brew 'yarn'
 brew 'bun'
 brew 'deno'
+brew 'pnpm'
 
 brew 'awscli'
 brew 'terraform'
