@@ -1,9 +1,6 @@
 cask_args appdir: '/Applications'
 
-# tap 'homebrew/cask'
-# tap 'homebrew/bundle'
-tap 'oven-sh/bun'
-
+brew 'neovim'
 brew 'vim'
 brew 'git'
 brew 'zsh'
@@ -16,29 +13,22 @@ brew 'libev'
 brew 'fzf'
 brew 'fx'
 brew 'ag'
-brew 'neovim'
 brew 'ripgrep'
 brew 'fd'
 brew 'httpie'
 brew 'coreutils'
-
-# fix for Sierra tmux copy register regression
-brew 'reattach-to-user-namespace'
 
 brew 'uv'
 brew 'python3'
 
 brew 'node'
 brew 'yarn'
-brew 'bun'
+brew 'oven-sh/bun/bun'
 brew 'deno'
 brew 'pnpm'
 
 brew 'awscli'
 brew 'terraform'
-brew 'stripe/stripe-cli/stripe'
-
-# brew '1password-cli'
 
 # cask 'rectangle'
 # cask 'transmission'

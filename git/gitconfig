@@ -1,6 +1,6 @@
 [user]
 	name = Kristaps Taube
-	email = t.kristaps@gmail.com
+	email = kristaps@ktaube.com
 	signingkey = /Users/kt/.ssh/id_rsa.pub
 [core]
 	excludesfile = ~/.gitignore
@@ -40,3 +40,4 @@
 	format = ssh
 [commit]
 	gpgsign = true
+
