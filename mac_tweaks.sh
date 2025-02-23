@@ -14,3 +14,7 @@ defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder;
 
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/Drive
 
+# Disable starting up with previou windows open
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+

@@ -48,37 +48,12 @@ alias vim='nvim'
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# load nvm only when calling relevant commands
-load_nvm() {
-  unset -f load_nvm
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  export NVM_LOADED=true
-}
-source_nvm() {
-  node() { [ -z "$NVM_LOADED" ] && load_nvm; command node "$@"; }
-  npm() { [ -z "$NVM_LOADED" ] && load_nvm; command npm "$@"; }
-  npx() { [ -z "$NVM_LOADED" ] && load_nvm; command npx "$@"; }
-  nvm() { [ -z "$NVM_LOADED" ] && load_nvm; command nvm "$@"; }
-  pnpm() { [ -z "$NVM_LOADED" ] && load_nvm; command pnpm "$@"; }
-
-  autoload -U add-zsh-hook
-  load_nvm_if_required() {
-    if [ -f .nvmrc ]; then
-      load_nvm
-    fi
-  }
-  add-zsh-hook chpwd load_nvm_if_required
-}
-
 # PATH config
 export PATH=$PATH:$HOME/.dotfiles/scripts
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/Library/Python/3.12/bin
 
 export PNPM_HOME="/Users/kt/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
-
 
