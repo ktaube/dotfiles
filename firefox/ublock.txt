@@ -1,7 +1,7 @@
-! Feb 25, 2025 https://old.reddit.com
+! Hide post listings
 old.reddit.com##.linklisting.sitetable
-
-! Feb 25, 2025 https://www.reddit.com
 www.reddit.com##shreddit-feed
 www.reddit.com##.nd\:overflow-hidden.nd\:visible.h-\[210px\].block
 
+! Hide shorts
+www.youtube.com###dismissible.style-scope.ytd-rich-shelf-renderer
