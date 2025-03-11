@@ -21,43 +21,44 @@ def get_anthropic_api_key():
     # Try to get API key from environment variable
     api_key = os.environ.get("ANTHROPIC_API_KEY")
 
-    # If not found in environment, try to get it from 1Password
-    if not api_key:
-        try:
-            # Run the op command to get the Anthropic API key
-            result = subprocess.run(
-                [
-                    "op",
-                    "item",
-                    "get",
-                    "Anthropic API (ktdev)",
-                    "--reveal",
-                    "--format",
-                    "json",
-                ],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
+    if api_key:
+        return api_key
 
-            # Parse the JSON output
-            item_data = json.loads(result.stdout)
+    try:
+        # Run the op command to get the Anthropic API key
+        result = subprocess.run(
+            [
+                "op",
+                "item",
+                "get",
+                "Anthropic API (ktdev)",
+                "--reveal",
+                "--format",
+                "json",
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
 
-            # Extract the credential field
-            for field in item_data.get("fields", []):
-                if field.get("label") == "credential":
-                    api_key = field.get("value")
-                    break
+        # Parse the JSON output
+        item_data = json.loads(result.stdout)
 
-            if not api_key:
-                print("Could not find credential field in 1Password item")
-        except subprocess.CalledProcessError as e:
-            print(f"Error retrieving API key from 1Password: {e}")
-            print(f"stderr: {e.stderr}")
-        except json.JSONDecodeError:
-            print("Error parsing 1Password output as JSON")
-        except Exception as e:
-            print(f"Unexpected error retrieving API key from 1Password: {e}")
+        # Extract the credential field
+        for field in item_data.get("fields", []):
+            if field.get("label") == "credential":
+                api_key = field.get("value")
+                break
+
+        if not api_key:
+            print("Could not find credential field in 1Password item")
+    except subprocess.CalledProcessError as e:
+        print(f"Error retrieving API key from 1Password: {e}")
+        print(f"stderr: {e.stderr}")
+    except json.JSONDecodeError:
+        print("Error parsing 1Password output as JSON")
+    except Exception as e:
+        print(f"Unexpected error retrieving API key from 1Password: {e}")
 
     if not api_key:
         print(
