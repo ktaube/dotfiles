@@ -18,3 +18,6 @@ ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/Drive
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 
+# Disable press & hold chars
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
