@@ -19,10 +19,6 @@ brew 'coreutils'
 
 brew 'uv'
 
-brew 'node'
-brew 'oven-sh/bun/bun'
-brew 'pnpm'
-
 brew 'awscli'
 brew 'terraform'
 

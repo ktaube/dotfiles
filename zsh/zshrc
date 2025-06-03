@@ -52,8 +52,7 @@ alias vim='nvim'
 export PATH=$PATH:$HOME/.dotfiles/scripts
 export PATH=$PATH:$HOME/.local/bin
 
-export PNPM_HOME="/Users/kt/Library/pnpm"
+export PNPM_HOME="/Users/$USER/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
-
